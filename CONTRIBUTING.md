@@ -60,14 +60,16 @@ Continuous maintenance of the localization is highly recommended when providing 
 Currently, we already have maintainers for:
 
 - Japanese
+- English (UK)
 - Simplified Chinese
 - Traditional Chinese
-- Italian
+- Czech
+- German
 - French
+- Italian
 - Portuguese
 - Spanish
 - Turkish
-- English (UK)
 
 #### Localization for the App Store
 

@@ -10,6 +10,11 @@ Change Log
 4.6.4 (599)
 --------------------------
 
+### New Features
+
+- Add Czech localization (thanks to Martin Růžička!).
+
+
 ### Improvements
 
 - [trivial] Dim the switcher buttons in the inspector when the window is inactive.
