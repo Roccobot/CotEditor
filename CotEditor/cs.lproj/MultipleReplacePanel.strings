@@ -100,9 +100,9 @@
 "gRf-KM-GZo.title" = "Neplatná pravidla budou přeskočena.";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Show advanced options"; ObjectID = "i8z-Xa-PxI"; */
-"i8z-Xa-PxI.ibShadowedToolTip" = "Zobrazit upřesňující možnosti";
+"i8z-Xa-PxI.ibShadowedToolTip" = "Zobrazit pokročilé volby";
 /* Class = "NSButton"; ibExternalAccessibilityDescription = "Advanced options"; ObjectID = "i8z-Xa-PxI"; */
-"i8z-Xa-PxI.ibExternalAccessibilityDescription" = "Upřesnit možnosti";
+"i8z-Xa-PxI.ibExternalAccessibilityDescription" = "Pokročilé volby";
 
 /* Class = "NSButtonCell"; title = "In Selection"; ObjectID = "4lm-Fu-Fcf"; */
 "4lm-Fu-Fcf.title" = "Ve výběru";

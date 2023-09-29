@@ -47,11 +47,11 @@
 /* Class = "NSMenuItem"; title = "Recent Searches"; ObjectID = "cdV-rY-hCN"; */
 "cdV-rY-hCN.title" = "Poslední hledání";
 /* Class = "NSMenuItem"; title = "Clear Recent Searches"; ObjectID = "vE8-oK-xlC"; */
-"vE8-oK-xlC.title" = "Vymazat poslední hledání";
+"vE8-oK-xlC.title" = "Smazat poslední hledání";
 
 /* Class = "NSPopUpButton"; ibExternalAccessibilityDescription = "Recent Replacements"; ObjectID = "Hw7-zz-RG8"; */
 "Hw7-zz-RG8.ibExternalAccessibilityDescription" = "Poslední nahrazení";
 /* Class = "NSMenuItem"; title = "Recent Replacements"; ObjectID = "7cw-iQ-0LM"; */
 "7cw-iQ-0LM.title" = "Poslední nahrazení";
 /* Class = "NSMenuItem"; title = "Clear Recent Replacements"; ObjectID = "vfK-an-Qnl"; */
-"vfK-an-Qnl.title" = "Vymazat poslední nahrazení";
+"vfK-an-Qnl.title" = "Smazat poslední nahrazení";

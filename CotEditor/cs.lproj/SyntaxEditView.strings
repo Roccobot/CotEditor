@@ -35,7 +35,7 @@
 "rIw-Nl-f4X.title" = "Kód";
 
 /* Class = "NSButtonCell"; title = "Restore Defaults"; ObjectID = "1020"; */
-"1020.title" = "Obnovit výchozí";
+"1020.title" = "Výchozí hodnoty";
 /* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "986"; */
 "986.title" = "Zrušit";
 /* Class = "NSButtonCell"; title = "OK"; ObjectID = "985"; */

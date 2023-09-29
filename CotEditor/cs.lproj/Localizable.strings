@@ -55,7 +55,7 @@
 
 
 // warning message occurs in multiple places
-"Are you sure you want to delete “%@”?" = "Opravdu chcete smazat „%@“?";
+"Are you sure you want to delete “%@”?" = "Určitě chcete „%@“ smazat?";
 "This action cannot be undone." = "Tuto akci nelze odvolat.";
 
 
@@ -116,8 +116,8 @@
 "Show quick reference for regular expression syntax." = "Zobrazit stručný přehled syntaxe regulárního výrazu.";
 
 // pair of accessibility label for a image button and its tooltip
-"Advanced options" = "Upřesňující možnosti";
-"Show advanced options" = "Zobrazit upřesňující možnosti";
+"Advanced options" = "Pokročilé volby";
+"Show advanced options" = "Zobrazit pokročilé volby";
 
 
 // Buttons
@@ -311,8 +311,8 @@
 "Ignore" = "Ignorovat";
 
 // Modified by an external application alert
-"The file has been changed by another application. There are also unsaved changes in CotEditor." = "Soubor byl změněn jinou aplikací. V CotEditoru jsou také neuložené změny.";
-"The file has been changed by another application." = "Soubor byl změněn jinou aplikací.";
+"The file has been changed by another application. There are also unsaved changes in CotEditor." = "Soubor byl změněn v jiné aplikaci. V CotEditoru jsou také neuložené změny.";
+"The file has been changed by another application." = "Soubor byl změněn v jiné aplikaci.";
 "Do you want to keep CotEditor’s edition or update it to the modified edition?" = "Chcete zachovat verzi CotEditoru nebo ho aktualizovat na upravenou verzi?";
 "Keep CotEditor’s Edition" = "Zachovat verzi CotEditoru";
 "Update" = "Aktualizovat";
@@ -329,11 +329,11 @@
 
 
 /* MARK: Toolbar */
-"Syntax Style" = "Styl syntaxe";
+"Syntax" = "Syntaxe";
 // tooltip
-"Change syntax style" = "Změnit styl syntaxe";
+"Change syntax" = "Změnit styl syntaxe";  // FIXME: syntax style -> syntax
 // menu item title
-"Recently Used" = "Naposledy použité";
+"Recently Used" = "Poslední položky";
 "Deleted" = "Odstraněné";
 
 "Inspector" = "Inspektor";
@@ -410,15 +410,15 @@
 // tooltip
 "Show spelling and grammar" = "Zobrazit pravopis a gramatiku";
 
-"Emoji & Symbols" = "Emoji a symboly";
+"Emoji & Symbols" = "Emotikony a symboly";
 // tooltip
-"Show Emoji & Symbols palette" = "Zobrazit paletu Emoji a symbolů";
+"Show Emoji & Symbols palette" = "Zobrazit paletu Emotikony a symboly";
 
 "Find" = "Hledat";
 // tooltip
 "Show Find & Replace" = "Zobrazit hledat a nahradit";
 
-"Print" = "Tisk";
+"Print" = "Tisknout";
 // tooltip
 "Print document" = "Tisk dokumentu";
 
@@ -439,7 +439,7 @@
 
 /* MARK: Touch Bar */
 // Touch bar item labels -Text Size
-"Actual Size" = "Aktuální velikost";
+"Actual Size" = "Skutečná velikost";
 
 
 
@@ -469,7 +469,7 @@
 // Summary item names
 "Font Size" = "Velikost písma";
 "Color" = "Barva";
-"Print Background" = "Tisk pozadí";
+"Print Backgrounds" = "Tisknout pozadí";
 "Line Number" = "Čísla řádků";
 "Invisibles" = "Neviditelné";
 "Header" = "Záhlaví";
@@ -485,7 +485,7 @@
 /* MARK: Inspector */
 // Outline
 "Recent Filters" = "Poslední filtry";
-"Clear Recent Filters" = "Vymazat poslední filtry";
+"Clear Recent Filters" = "Smazat poslední filtry";
 "No Recent Filter" = "Žádný poslední filtr";
 
 // Warnings
@@ -609,7 +609,7 @@
 
 /* MARK: Unicode Input View Controller */
 "Recents" = "Poslední použité";
-"Clear Recents" = "Vymazat poslední";
+"Clear Recents" = "Smazat poslední";
 "Invalid code" = "Neplatný kód";
 
 
@@ -826,8 +826,8 @@
 
 /* MARK: Console */
 "Console" = "Konzola";
-"Clear Log" = "Vymazat protokol";
-"Clear error log" = "Vymazat protokol chyb";
+"Clear Log" = "Smazat protokol";
+"Clear error log" = "Smazat protokol chyb";
 
 
 
@@ -876,8 +876,8 @@
 
 
 /* MARK: Syntax Mapping Conflicts View */
-"Syntax Style Mapping Conflicts" = "Konflikty mapování stylů syntaxe";
-"The following file mapping rules are registered in multiple styles. CotEditor uses the first style automatically. To resolve conflicts, edit each syntax style." = "Následující pravidla mapování souborů jsou registrována ve více stylech. CotEditor automaticky použije první styl. Chcete-li vyřešit konflikty, upravte každý styl syntaxe.";
+"Syntax Mapping Conflicts" = "Konflikty mapování stylů syntaxe";  // FIXME: syntax style -> syntax
+"The following file mapping rules are registered in multiple syntaxes. CotEditor uses the first syntax automatically. To resolve conflicts, edit each syntax definition." = "Následující pravidla mapování souborů jsou registrována ve více stylech. CotEditor automaticky použije první styl. Chcete-li vyřešit konflikty, upravte každý styl syntaxe.";  // FIXME: syntax style -> syntax
 "Extension" = "Přípona";
 "Filename" = "Název souboru";
 "Interpreter" = "Interpretr";
