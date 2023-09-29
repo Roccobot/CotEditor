@@ -4,12 +4,12 @@
 //  CotEditor
 //  https://coteditor.com
 //
-//  Created by Alex Newson on 2022-01-30.
-//  Localized by Martin Růžička on 2023-09-26 
+//  Created by Martin Růžička on 2023-09-26.
+//  Localized by Martin Růžička
 //
 //  ---------------------------------------------------------------------------
 //
-//  © 2022-2023 1024jp
+//  © 2023 1024jp
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -48,7 +48,7 @@
 /* Class = "NSTextFieldCell"; title = "Default syntax:"; ObjectID = "3329"; */
 "3329.title" = "Výchozí syntaxe:";
 
-/* Class = "NSTextFieldCell"; title = "Available syntaxs:"; ObjectID = "vlw-Tc-sLl"; */
+/* Class = "NSTextFieldCell"; title = "Available syntaxes:"; ObjectID = "vlw-Tc-sLl"; */
 "vlw-Tc-sLl.title" = "Dostupné syntaxe:";
 
 /* Class = "NSView"; ibShadowedToolTip = "This style is customized."; ObjectID = "cbJ-XK-bnG"; */

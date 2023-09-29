@@ -86,7 +86,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kódování souboru"
+            "value" : "Kódování textu"
           }
         },
         "de" : {
@@ -476,7 +476,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kódování souboru"
+            "value" : "Kódování textu"
           }
         },
         "de" : {

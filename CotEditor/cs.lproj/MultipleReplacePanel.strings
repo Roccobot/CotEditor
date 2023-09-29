@@ -4,12 +4,12 @@
 //  CotEditor
 //  https://coteditor.com
 //
-//  Created by Alex Newson on 2022-01-30.
-//  Localized by Martin Růžička on 2023-09-26 
+//  Created by Martin Růžička on 2023-09-26.
+//  Localized by Martin Růžička
 //
 //  ---------------------------------------------------------------------------
 //
-//  © 2022-2023 1024jp
+//  © 2023 1024jp
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -78,12 +78,12 @@
 "nRC-aM-NZ2.headerCell.title" = "Nahradit";
 
 /* Class = "NSTableColumn"; headerCell.title = "RE"; ObjectID = "VtR-Qz-MBf"; */
-"VtR-Qz-MBf.headerCell.title" = "RV"; //Regulární výraz
+"VtR-Qz-MBf.headerCell.title" = "RV";  // Regulární výraz
 /* Class = "NSTableColumn"; headerToolTip = "Regular Expression"; ObjectID = "VtR-Qz-MBf"; */
 "VtR-Qz-MBf.headerToolTip" = "Regulární výraz";
 
 /* Class = "NSTableColumn"; headerCell.title = "IC"; ObjectID = "d3o-yf-jB4"; */
-"d3o-yf-jB4.headerCell.title" = "IV"; //Ignorovat velikost
+"d3o-yf-jB4.headerCell.title" = "IV";  // Ignorovat velikost
 /* Class = "NSTableColumn"; headerToolTip = "Ignore Cases"; ObjectID = "d3o-yf-jB4"; */
 "d3o-yf-jB4.headerToolTip" = "Ignorovat velikost písmen";
 

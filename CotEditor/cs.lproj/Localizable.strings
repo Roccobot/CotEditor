@@ -4,12 +4,12 @@
 //  CotEditor
 //  https://coteditor.com
 //
-//  Created by 1024jp on 2022-01-30.
-//  Localized by Martin Růžička on 2023-09-26 
+//  Created by Martin Růžička on 2023-09-26.
+//  Localized by Martin Růžička
 //
 //  ---------------------------------------------------------------------------
 //
-//  © 2022-2023 1024jp
+//  © 2023 1024jp
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -87,7 +87,7 @@
 "Empty find string" = "Prázdný řetězec hledání";
 "The option “in selection” is selected, although nothing is selected." = "Možnost „ve výběru“ je vybrána, i když není nic vybráno.";
 "Input text to find." = "Zadejte hledaný text.";
-"Select the search scope in document or disable “in selection” option." = "Vyberte rozsah vyhledávání v dokumentu nebo zakažte možnost „ve výběru“.";
+"Select the search scope in the document or turn off the “in selection" = "Vyberte rozsah vyhledávání v dokumentu nebo zakažte možnost „ve výběru“.";
 
 // accessibility announcement
 "Search wrapped." = "Hledání dokončeno.";  // announced when the search restarted from the beginning.
@@ -102,12 +102,32 @@
 "Not found" = "Nenalezeno";
 "Not replaced" = "Nenahrazeno";
 
+// pairs of checkbox label and its tooltip
+"Regular Expression" = "Regulární výraz";
+"Select to search with regular expression." = "Chcete-li hledat pomocí regulárního výrazu vyberte tuto možnost.";
+
+"Ignore Case" = "Ignorovat velikost písmen";
+"Select to ignore character case on search." = "Chcete-li při hledání ignorovat velikost písmen vyberte tuto možnost.";
+
+"In Selection" = "Ve výběru";
+"Select to search text only from selection." = "Chcete-li hledat text pouze ve výběru vyberte tuto možnost.";
+
+// tooltip for regex help button
+"Show quick reference for regular expression syntax." = "Zobrazit stručný přehled syntaxe regulárního výrazu.";
+
+// pair of accessibility label for a image button and its tooltip
+"Advanced options" = "Upřesňující možnosti";
+"Show advanced options" = "Zobrazit upřesňující možnosti";
+
+
+// Buttons
+
 // pairs of button label and its tooltip
 "Close" = "Zavřít";
 "Close find result." = "Zavřít výsledek hledání.";
 
 "Find All" = "Hledat vše";
-"Find and list all matches up." = "Vyhledat a vypsat všechny shody.";
+"Find and list all matches." = "Vyhledat a vypsat všechny shody.";
 
 "Replace All" = "Nahradit vše";
 "Replace all matches with the replacement text." = "Nahradit všechny shody nahrazovaným textem.";
@@ -230,8 +250,8 @@
 
 
 /* MARK: Open Panel Accessory */
-"Encoding:" = "Kódování:";
-"Show hidden files" = "Zobrazit skryté soubory";
+"Text encoding:" = "Kódování textu:";
+"Show invisible files" = "Zobrazit skryté soubory";
 
 
 
@@ -256,7 +276,7 @@
 "Line Endings to %@" = "Ukončení řádků na „%@“";
 
 // Convert or reinterpret encoding alert
-"File encoding" = "Kódování souborů";
+"Text encoding" = "Kódování textu";
 "Do you want to convert or reinterpret this document using “%@”?" = "Chcete tento dokument převést nebo reinterpretovat pomocí „%@“?";
 "Convert" = "Převést";
 "Reinterpret" = "Reinterpretovat";
@@ -363,7 +383,7 @@
 "Custom…" = "Vlastní…";
 "Use Spaces for Indentation" = "Použít mezery pro odsazení";
 
-"Wrap Lines" = "Zalamovat řádky";
+"Line Wrapping" = "Zalamování řádků";
 // tooltip
 "Unwrap lines" = "Nezalamovat řádky";
 "Wrap lines" = "Zalamovat řádky";
@@ -873,11 +893,11 @@
 // Variation selectors
 "Emoji Style" = "Styl emoji";
 "Text Style" = "Styl textu";
-"Skin Tone I-II" = "Skin Tone I-II";
-"Skin Tone III" = "Skin Tone III";
-"Skin Tone IV" = "Skin Tone IV";
-"Skin Tone V" = "Skin Tone V";
-"Skin Tone VI" = "Skin Tone VI";
+"Skin Tone I-II" = "Pleťový odstín I-II";
+"Skin Tone III" = "Pleťový odstín III";
+"Skin Tone IV" = "Pleťový odstín IV";
+"Skin Tone V" = "Pleťový odstín V";
+"Skin Tone VI" = "Pleťový odstín VI";
 "Variant" = "Varianta";
 
 

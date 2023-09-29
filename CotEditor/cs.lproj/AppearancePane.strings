@@ -4,12 +4,12 @@
 //  CotEditor
 //  https://coteditor.com
 //
-//  Created by Alex Newson on 2022-01-30.
-//  Localized by Martin Růžička on 2023-09-26 
+//  Created by Martin Růžička on 2023-09-26.
+//  Localized by Martin Růžička
 //
 //  ---------------------------------------------------------------------------
 //
-//  © 2022-2023 1024jp
+//  © 2023 1024jp
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -50,8 +50,6 @@
 "3fg-x6-5T8.title" = "Vyhlazení";
 /* Class = "NSButtonCell"; title = "Ligatures"; ObjectID = "AFh-3D-ZB2"; */
 "AFh-3D-ZB2.title" = "Ligatury";
-/* Class = "NSButtonCell"; title = "Always use monospaced font"; ObjectID = "t8U-fh-Wkt"; */
-"t8U-fh-Wkt.title" = "Vždy používat neproporcionální písmo";
 
 /* Class = "NSTextFieldCell"; title = "Line height:"; ObjectID = "r1c-v3-qW1"; */
 "r1c-v3-qW1.title" = "Výška řádku:";
