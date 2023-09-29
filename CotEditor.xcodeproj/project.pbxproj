@@ -1166,6 +1166,23 @@
 		2AA14CFE1FA498E900EAF586 /* UnixScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnixScript.swift; sourceTree = "<group>"; };
 		2AA14D011FA4999200EAF586 /* PersistentOSAScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentOSAScript.swift; sourceTree = "<group>"; };
 		2AA175F92AC5634500F6462C /* PopoverHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverHolderView.swift; sourceTree = "<group>"; };
+		2AA175FE2AC5831500F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/GeneralPane.strings; sourceTree = "<group>"; };
+		2AA175FF2AC5831600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/AppearancePane.strings; sourceTree = "<group>"; };
+		2AA176002AC5831600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/WindowPane.strings; sourceTree = "<group>"; };
+		2AA176012AC5831600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/EditPane.strings; sourceTree = "<group>"; };
+		2AA176022AC5831600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/FormatPane.strings; sourceTree = "<group>"; };
+		2AA176032AC5831600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/SnippetsPane.strings; sourceTree = "<group>"; };
+		2AA176042AC5831600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/KeyBindingsPane.strings; sourceTree = "<group>"; };
+		2AA176052AC5831600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/SyntaxEditView.strings; sourceTree = "<group>"; };
+		2AA176062AC5831600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/FindPanelFieldView.strings; sourceTree = "<group>"; };
+		2AA176072AC5831600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/MultipleReplacePanel.strings; sourceTree = "<group>"; };
+		2AA176082AC5831600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/DocumentInspectorView.strings; sourceTree = "<group>"; };
+		2AA176092AC5831600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/PatternSortView.strings; sourceTree = "<group>"; };
+		2AA1760C2AC5845600F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = cs; path = cs.lproj/ReportTemplate.md; sourceTree = "<group>"; };
+		2AA1760D2AC5846B00F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = cs; path = cs.lproj/Acknowledgments.html; sourceTree = "<group>"; };
+		2AA1760E2AC5847100F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = cs; path = cs.lproj/Credits.html; sourceTree = "<group>"; };
+		2AA1760F2AC5848300F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/UnicodeBlock.strings; sourceTree = "<group>"; };
+		2AA176102AC584A300F6462C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2AA2E00F1BFDE0190087BDD6 /* CharacterInfoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterInfoTests.swift; sourceTree = "<group>"; };
 		2AA2E0121BFE12620087BDD6 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/UnicodeBlock.strings; sourceTree = "<group>"; };
 		2AA2E0151BFE14310087BDD6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UnicodeBlock.strings"; sourceTree = "<group>"; };
@@ -2555,6 +2572,7 @@
 				pt,
 				tr,
 				es,
+				cs,
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* CotEditor */;
 			packageReferences = (
@@ -3494,6 +3512,7 @@
 				57ED31711FFD892900F16CAD /* pt */,
 				99A8630E2A753A7400EEEE75 /* es */,
 				08C28FAF279CBE440016693E /* tr */,
+				2AA176102AC584A300F6462C /* cs */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -3521,6 +3540,7 @@
 				57ED315A1FFD892700F16CAD /* pt */,
 				999FCED42A7537B200462DE4 /* es */,
 				08C28F83279CBE2D0016693E /* tr */,
+				2AA176002AC5831600F6462C /* cs */,
 			);
 			name = WindowPane.storyboard;
 			sourceTree = "<group>";
@@ -3539,6 +3559,7 @@
 				57ED315F1FFD892700F16CAD /* pt */,
 				999FCED92A7537B900462DE4 /* es */,
 				08C28F88279CBE2D0016693E /* tr */,
+				2AA176042AC5831600F6462C /* cs */,
 			);
 			name = KeyBindingsPane.storyboard;
 			sourceTree = "<group>";
@@ -3557,6 +3578,7 @@
 				57ED315B1FFD892700F16CAD /* pt */,
 				999FCED52A7537B300462DE4 /* es */,
 				08C28F84279CBE2D0016693E /* tr */,
+				2AA175FF2AC5831600F6462C /* cs */,
 			);
 			name = AppearancePane.storyboard;
 			sourceTree = "<group>";
@@ -3575,6 +3597,7 @@
 				57ED315C1FFD892700F16CAD /* pt */,
 				999FCED62A7537B500462DE4 /* es */,
 				08C28F85279CBE2D0016693E /* tr */,
+				2AA176012AC5831600F6462C /* cs */,
 			);
 			name = EditPane.storyboard;
 			sourceTree = "<group>";
@@ -3593,6 +3616,7 @@
 				57ED315D1FFD892700F16CAD /* pt */,
 				999FCED72A7537B600462DE4 /* es */,
 				08C28F86279CBE2D0016693E /* tr */,
+				2AA176022AC5831600F6462C /* cs */,
 			);
 			name = FormatPane.storyboard;
 			sourceTree = "<group>";
@@ -3611,6 +3635,7 @@
 				2A03E699201457570093FDF1 /* pt */,
 				999FCEE42A7537CA00462DE4 /* es */,
 				08C28FA2279CBE2F0016693E /* tr */,
+				2AA176092AC5831600F6462C /* cs */,
 			);
 			name = PatternSortView.storyboard;
 			sourceTree = "<group>";
@@ -3629,6 +3654,7 @@
 				2AE439D720A1280800EED807 /* pt */,
 				999FCEDD2A7537C000462DE4 /* es */,
 				08C28F96279CBE2E0016693E /* tr */,
+				2AA176072AC5831600F6462C /* cs */,
 			);
 			name = MultipleReplacePanel.storyboard;
 			sourceTree = "<group>";
@@ -3656,6 +3682,7 @@
 				2A4144C42013A9140061F653 /* pt */,
 				999FCEDF2A7537C300462DE4 /* es */,
 				08C28F98279CBE2F0016693E /* tr */,
+				2AA176082AC5831600F6462C /* cs */,
 			);
 			name = DocumentInspectorView.storyboard;
 			sourceTree = "<group>";
@@ -3674,6 +3701,7 @@
 				57ED31771FFD892A00F16CAD /* pt */,
 				99A863122A754DA100EEEE75 /* es */,
 				08C28FAC279CBE300016693E /* tr */,
+				2AA1760C2AC5845600F6462C /* cs */,
 			);
 			name = ReportTemplate.md;
 			sourceTree = "<group>";
@@ -3692,6 +3720,7 @@
 				57ED314B1FFD892600F16CAD /* pt */,
 				999FCEDC2A7537BE00462DE4 /* es */,
 				08C28F94279CBE2E0016693E /* tr */,
+				2AA176062AC5831600F6462C /* cs */,
 			);
 			name = FindPanelFieldView.storyboard;
 			sourceTree = "<group>";
@@ -3745,6 +3774,7 @@
 				57ED31751FFD892900F16CAD /* pt */,
 				99A863102A753A9900EEEE75 /* es */,
 				08C28FAA279CBE300016693E /* tr */,
+				2AA1760E2AC5847100F6462C /* cs */,
 			);
 			name = Credits.html;
 			sourceTree = "<group>";
@@ -3760,6 +3790,7 @@
 				57ED31761FFD892900F16CAD /* pt */,
 				99A863112A753AB300EEEE75 /* es */,
 				08C28FAB279CBE300016693E /* tr */,
+				2AA1760D2AC5846B00F6462C /* cs */,
 			);
 			name = Acknowledgments.html;
 			sourceTree = "<group>";
@@ -3786,6 +3817,7 @@
 				57ED31741FFD892900F16CAD /* pt */,
 				99A8630F2A753A8400EEEE75 /* es */,
 				08C28FB2279CBE530016693E /* tr */,
+				2AA1760F2AC5848300F6462C /* cs */,
 			);
 			name = UnicodeBlock.strings;
 			sourceTree = "<group>";
@@ -3858,6 +3890,7 @@
 				2AB2245A21A809B800F6201F /* pt */,
 				999FCEDB2A7537BC00462DE4 /* es */,
 				08C28F8A279CBE2D0016693E /* tr */,
+				2AA176052AC5831600F6462C /* cs */,
 			);
 			name = SyntaxEditView.storyboard;
 			sourceTree = "<group>";
@@ -3876,6 +3909,7 @@
 				57ED31591FFD892700F16CAD /* pt */,
 				999FCED32A7537B000462DE4 /* es */,
 				08C28F82279CBE2D0016693E /* tr */,
+				2AA175FE2AC5831500F6462C /* cs */,
 			);
 			name = GeneralPane.storyboard;
 			sourceTree = "<group>";
@@ -3894,6 +3928,7 @@
 				57ED315E1FFD892700F16CAD /* pt */,
 				999FCED82A7537B800462DE4 /* es */,
 				08C28F87279CBE2D0016693E /* tr */,
+				2AA176032AC5831600F6462C /* cs */,
 			);
 			name = SnippetsPane.storyboard;
 			sourceTree = "<group>";
