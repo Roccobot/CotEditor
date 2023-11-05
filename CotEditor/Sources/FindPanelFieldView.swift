@@ -68,12 +68,13 @@ final class FindPanelFieldViewController: NSViewController, NSTextViewDelegate {
     private var resultObservers: Set<AnyCancellable> = []
     
     @IBOutlet private weak var findTextView: RegexFindPanelTextView?
-    @IBOutlet private weak var replacementTextView: RegexFindPanelTextView?
     @IBOutlet private weak var findHistoryMenu: NSMenu?
-    @IBOutlet private weak var replaceHistoryMenu: NSMenu?
     @IBOutlet private weak var findResultField: NSTextField?
-    @IBOutlet private weak var replacementResultField: NSTextField?
     @IBOutlet private weak var findClearButtonConstraint: NSLayoutConstraint?
+    
+    @IBOutlet private weak var replacementTextView: RegexFindPanelTextView?
+    @IBOutlet private weak var replaceHistoryMenu: NSMenu?
+    @IBOutlet private weak var replacementResultField: NSTextField?
     @IBOutlet private weak var replacementClearButtonConstraint: NSLayoutConstraint?
     
     
@@ -86,14 +87,14 @@ final class FindPanelFieldViewController: NSViewController, NSTextViewDelegate {
         super.viewDidLoad()
         
         // observe find result notifications from TextFinder and its expiration
-        NotificationCenter.default.publisher(for: TextFinder.didFindNotification)
-            .map { $0.object as? TextFinder }
-            .receive(on: RunLoop.main)
-            .sink { [weak self] in self?.update(result: $0?.findResult) }
-            .store(in: &self.resultObservers)
-        NotificationCenter.default.publisher(for: NSWindow.didResignMainNotification)
-            .sink { [weak self] _ in self?.update(result: nil) }
-            .store(in: &self.resultObservers)
+        self.resultObservers = [
+            NotificationCenter.default.publisher(for: TextFinder.didFindNotification)
+                .map { $0.object as? TextFinder }
+                .receive(on: RunLoop.main)
+                .sink { [weak self] in self?.update(result: $0?.findResult) },
+            NotificationCenter.default.publisher(for: NSWindow.didResignMainNotification)
+                .sink { [weak self] _ in self?.update(result: nil) },
+        ]
         
         self.findTextView?.action = #selector(performFind)
         self.findTextView?.target = self
