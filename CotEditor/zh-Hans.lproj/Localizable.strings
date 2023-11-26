@@ -829,6 +829,11 @@
 
 
 
+/* MARK: Quick Action Bar */
+"Quick Actions" = "快速操作";
+
+
+
 /* MARK: FileDropItem */
 // Descriptions about variables in the file drop feature
 "The dropped file absolute path." = "拖拽的文件绝对路径";
@@ -956,6 +961,13 @@
 "Version:" = "版本：";
 // badge in the character inspector for when the inspected character is deprecated in the latest Unicode specification
 "deprecated" = "已弃用";
+
+
+
+/* MARK: LiveTextInsertionView */
+// error messages
+"No text detected" = "没有检测到文本";
+"Detection failed" = "检测失败";
 
 
 

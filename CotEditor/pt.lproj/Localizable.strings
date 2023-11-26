@@ -829,6 +829,11 @@
 
 
 
+/* MARK: Quick Action Bar */
+"Quick Actions" = "Ações Rápidas";
+
+
+
 /* MARK: FileDropItem */
 // Descriptions about variables in the file drop feature
 "The dropped file absolute path." = "O caminho absoluto do arquivo solto.";
@@ -955,6 +960,13 @@
 "Version:" = "Versão:";
 // badge in the character inspector for when the inspected character is deprecated in the latest Unicode specification
 "deprecated" = "depreciado";
+
+
+
+/* MARK: LiveTextInsertionView */
+// error messages
+"No text detected" = "Nenhum texto detectado";  // FIXME: needs review
+"Detection failed" = "A detecção falhou";  // FIXME: needs review
 
 
 

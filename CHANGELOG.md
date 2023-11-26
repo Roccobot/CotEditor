@@ -2,18 +2,65 @@
 Change Log
 ==========================
 
-4.6.5 (unreleased)
+4.7.0-beta.3 (unreleased)
+--------------------------
+
+
+
+4.7.0-beta.2 (613)
+--------------------------
+
+### Improvements
+
+- Optimize the performance of the normalization of incompatible line endings.
+- Improve stability.
+- [trivial] Increase the default font size and line height.
+- [beta] Add device name to quick actions related to Continuity Camera.
+- [beta] Localize strings added on CotEditor 4.7.0.
+
+
+### Fixes
+
+- [beta] Fix an issue that disabled menu items were listed as the quick action candidates.
+- [beta] Fix an issue that some actions were not performed properly by the Quick Action.
+
+
+
+4.7.0-beta (611)
+--------------------------
+
+### New Features
+
+- Add Quick Action bar which can launch by the Command-K keys.
+- Insert scanned text in a photo taken by iPhone or iPad.
+
+
+### Fixes
+
+- Fix an issue that the Forward Delete key could not be correctly assigned as custom key bindings.
+
+
+### TODO
+
+- Some text are not localized yet.
+
+
+
+4.6.5 (601)
 --------------------------
 
 ### Improvements
 
 - Optimize the performance of the incompatible character scan.
-- [trivial] Add tooltip to font field in Appearance settings pane.
+- [trivial] Add a tooltip to font fields in the Appearance settings pane.
+- [dev] Migrate the custom sort pattern view to SwiftUI.
 
 
 ### Fixes
 
+- Fix an issue that changes in the multiple replacement definition editor did not save.
 - Fix an issue that the application could hang when opening a large document without line breaks.
+- Fix an issue that a label was not localized.
 
 
 

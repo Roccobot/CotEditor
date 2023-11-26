@@ -41,7 +41,7 @@ struct PatternSortView: View {
     private let sampleFontName: String?
     private let completionHandler: (_ pattern: any SortPattern, _ options: SortOptions) -> Void
     
-    @State private var sortKey: SortKey
+    @State private var sortKey: SortKey = .column
     @State private var columnSortPattern = CSVSortPattern()
     @State private var regularExpressionSortPattern = RegularExpressionSortPattern()
     @State private var options = SortOptions()
@@ -56,15 +56,14 @@ struct PatternSortView: View {
     ///
     /// - Parameters:
     ///   - sampleLine: A line of target text to display as sample.
-    ///   - fontName: The name of the editor font.
+    ///   - sampleFontName: The name of the editor font for the sample line display.
     ///   - completionHandler: The callback method to perform when the command was accepted.
-    init(sampleLine: String, sampleFontName: String? = nil, sortKey: SortKey = .column, completionHandler: @escaping (_ pattern: any SortPattern, _ options: SortOptions) -> Void) {
+    init(sampleLine: String, sampleFontName: String? = nil, completionHandler: @escaping (_ pattern: any SortPattern, _ options: SortOptions) -> Void) {
         
         self.sampleLine = sampleLine
         self.sampleFontName = sampleFontName
         self.completionHandler = completionHandler
         
-        self._sortKey = State(initialValue: sortKey)
         self._attributedSampleLine = State(initialValue: AttributedString(sampleLine))
     }
     
@@ -304,5 +303,5 @@ struct RegularExpressionSortPatternView: View {
 // MARK: - Preview
 
 #Preview {
-    PatternSortView(sampleLine: "Dog, 🐕, 1", sampleFontName: "Menlo", sortKey: .regularExpression) { (_, _) in }
+    PatternSortView(sampleLine: "Dog, 🐕, 1", sampleFontName: "Menlo") { (_, _) in }
 }

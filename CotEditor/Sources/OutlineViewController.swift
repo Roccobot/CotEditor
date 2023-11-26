@@ -33,7 +33,18 @@ private extension NSUserInterfaceItemIdentifier {
 }
 
 
-final class OutlineViewController: NSViewController {
+final class OutlineViewController: NSViewController, DocumentOwner {
+    
+    // MARK: Public Properties
+    
+    var document: Document {
+        
+        didSet {
+            self.observeDocument()
+            self.observeSyntax()
+        }
+    }
+    
     
     // MARK: Private Properties
     
@@ -65,15 +76,17 @@ final class OutlineViewController: NSViewController {
     // MARK: -
     // MARK: Lifecycle
     
-    override var representedObject: Any? {
+    required init?(document: Document, coder: NSCoder) {
         
-        didSet {
-            assert(representedObject == nil || representedObject is Document,
-                   "representedObject of \(self.className) must be an instance of \(Document.className())")
-            
-            self.observeDocument()
-            self.observeSyntax()
-        }
+        self.document = document
+        
+        super.init(coder: coder)
+    }
+    
+    
+    required init?(coder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
     }
     
     
@@ -104,7 +117,7 @@ final class OutlineViewController: NSViewController {
         
         self.selectionObserver = NotificationCenter.default.publisher(for: NSTextView.didChangeSelectionNotification)
             .map { $0.object as! NSTextView }
-            .filter { [weak self] in $0.textStorage == self?.document?.textStorage }
+            .filter { [weak self] in $0.textStorage == self?.document.textStorage }
             .filter { !$0.hasMarkedText() }
             // avoid updating outline item selection before finishing outline parse
             // -> Otherwise, a wrong item can be selected because of using the outdated outline ranges.
@@ -121,6 +134,18 @@ final class OutlineViewController: NSViewController {
         
         self.selectionObserver = nil
         self.fontSizeObserver = nil
+    }
+    
+    
+    override var representedObject: Any? {
+        
+        didSet {
+            assert(representedObject == nil || representedObject is Document,
+                   "representedObject of \(self.className) must be an instance of \(Document.className())")
+            
+            self.observeDocument()
+            self.observeSyntax()
+        }
     }
     
     
@@ -143,13 +168,6 @@ final class OutlineViewController: NSViewController {
     
     
     // MARK: Private Methods
-    
-    /// Current outline items.
-    private var document: Document? {
-        
-        self.representedObject as? Document
-    }
-    
     
     /// User input string for filtering.
     private var filterString: String {
@@ -182,7 +200,7 @@ final class OutlineViewController: NSViewController {
         
         // cancel if text became shorter than range to select
         guard
-            let textView = self.document?.textView,
+            let textView = self.document.textView,
             item.range.upperBound <= textView.string.length
         else { return }
         
@@ -194,7 +212,7 @@ final class OutlineViewController: NSViewController {
     /// Update document observation for syntax.
     private func observeDocument() {
         
-        self.documentObserver = self.document?.didChangeSyntax
+        self.documentObserver = self.document.didChangeSyntax
             .receive(on: RunLoop.main)
             .sink { [weak self] _ in self?.observeSyntax() }
     }
@@ -203,7 +221,7 @@ final class OutlineViewController: NSViewController {
     /// Update syntax observation for outline.
     private func observeSyntax() {
         
-        self.syntaxObserver = self.document?.syntaxParser.$outlineItems
+        self.syntaxObserver = self.document.syntaxParser.$outlineItems
             .compactMap { $0 }
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in self?.outlineItems = $0 }
@@ -219,7 +237,7 @@ final class OutlineViewController: NSViewController {
         guard let outlineView = self.outlineView else { return }
         
         guard
-            let textView = textView ?? self.document?.textView,
+            let textView = textView ?? self.document.textView,
             let row = self.outlineItems.indexOfItem(at: textView.selectedRange.location),
             outlineView.numberOfRows > row
         else { return outlineView.deselectAll(nil) }

@@ -756,7 +756,7 @@
 "Export As:" = "名前:";
 
 // Syntax validation
-"Block comment needs both begin delimiter and end delimiter." = "ブロックコメントは開始文字と終了文字の両方を必要とします。";
+"Block comment needs both begin delimiter and end delimiter." = "ブロックコメントは開始と終了の両方の文字列が必要です。";
 "Begin string" = "開始文字列";
 "End string" = "終了文字列";
 "The same word is registered multiple times." = "重複して登録されています。";
@@ -826,6 +826,11 @@
 "Console" = "コンソール";
 "Clear Log" = "ログを消去";
 "Clear error log" = "エラーログを消去";
+
+
+
+/* MARK: Quick Action Bar */
+"Quick Actions" = "クイックアクション";
 
 
 
@@ -956,6 +961,13 @@
 "Version:" = "バージョン:";
 // badge in the character inspector for when the inspected character is deprecated in the latest Unicode specification
 "deprecated" = "非推奨";
+
+
+
+/* MARK: LiveTextInsertionView */
+// error messages
+"No text detected" = "テキストが検出されませんでした";
+"Detection failed" = "検出に失敗しました";
 
 
 

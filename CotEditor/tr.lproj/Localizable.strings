@@ -829,6 +829,11 @@
 
 
 
+/* MARK: Quick Action Bar */
+"Quick Actions" = "Hızlı Eylemler";
+
+
+
 /* MARK: FileDropItem */
 // Descriptions about variables in the file drop feature
 "The dropped file absolute path." = "Bırakılan dosya mutlak yolu.";
@@ -955,6 +960,13 @@
 "Version:" = "Sürüm:";
 // badge in the character inspector for when the inspected character is deprecated in the latest Unicode specification
 "deprecated" = "kullanımdan kaldırıldı";
+
+
+
+/* MARK: LiveTextInsertionView */
+// error messages
+"No text detected" = "Algılanan metin yok";
+"Detection failed" = "Algılama başarısız";
 
 
 

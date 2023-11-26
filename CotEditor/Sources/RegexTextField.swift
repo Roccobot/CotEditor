@@ -28,19 +28,20 @@ import SwiftUI
 
 struct RegexTextField: NSViewRepresentable {
     
-    typealias NSViewType = RegularExpressionTextField
+    typealias NSViewType = NSTextField
     
     @Binding private var text: String
     private let prompt: LocalizedStringResource?
-    private var onSubmit: () -> Void = {}
+    private let onSubmit: () -> Void
     
     private var leadingInset: Double = 0
     
     
-    init(text: Binding<String>, prompt: LocalizedStringResource? = nil) {
+    init(text: Binding<String>, prompt: LocalizedStringResource? = nil, onSubmit: @escaping () -> Void = {}) {
         
         self._text = text
         self.prompt = prompt
+        self.onSubmit = onSubmit
     }
     
     
@@ -57,19 +58,20 @@ struct RegexTextField: NSViewRepresentable {
     }
     
     
-    func makeNSView(context: Context) -> RegularExpressionTextField {
+    func makeNSView(context: Context) -> NSTextField {
         
         let textField = RegularExpressionTextField()
         textField.delegate = context.coordinator
         textField.placeholderString = self.prompt.flatMap(String.init(localized:))
         textField.isEditable = true
+        textField.lineBreakMode = .byTruncatingTail
         (textField.cell as? PaddingTextFieldCell)?.leadingPadding = self.leadingInset
         
         return textField
     }
     
     
-    func updateNSView(_ nsView: RegularExpressionTextField, context: Context) {
+    func updateNSView(_ nsView: NSTextField, context: Context) {
         
         nsView.stringValue = self.text
         nsView.delegate = context.coordinator

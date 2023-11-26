@@ -829,6 +829,11 @@
 
 
 
+/* MARK: Quick Action Bar */
+"Quick Actions" = "Schnellaktionen";
+
+
+
 /* MARK: FileDropItem */
 // Descriptions about variables in the file drop feature
 "The dropped file absolute path." = "Der absolute Pfad der abgelegten Datei.";
@@ -955,6 +960,13 @@
 "Version:" = "Version:";
 // badge in the character inspector for when the inspected character is deprecated in the latest Unicode specification
 "deprecated" = "abgelehnt";
+
+
+
+/* MARK: LiveTextInsertionView */
+// error messages
+"No text detected" = "Kein Text erkennt";
+"Detection failed" = "Erkennung fehlgeschlagen";
 
 
 

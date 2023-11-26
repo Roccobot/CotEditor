@@ -50,12 +50,12 @@ final class ShortcutField: NSTextField, NSTextViewDelegate {
             fieldEditor.delegate = self
         }
         
-        self.keyDownMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [unowned self] (event) -> NSEvent? in
+        self.keyDownMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [unowned self] event -> NSEvent? in
             guard let shortcut = Shortcut(keyDownEvent: event) else { return event }
             
-            if event.keyCode == 53, shortcut.modifierMask.isEmpty {  // single Escape
+            if event.keyCode == 53, shortcut.modifiers.isEmpty {  // single Escape
                 // treat as cancel
-            } else if event.specialKey == .delete, shortcut.modifierMask.isEmpty {  // single Delete
+            } else if event.specialKey == .delete, shortcut.modifiers.isEmpty {  // single Delete
                 // treat as delete
                 self.objectValue = nil
             } else {
@@ -87,10 +87,7 @@ final class ShortcutField: NSTextField, NSTextViewDelegate {
         }
         
         // end monitoring key down event
-        if let monitor = self.keyDownMonitor {
-            NSEvent.removeMonitor(monitor)
-            self.keyDownMonitor = nil
-        }
+        self.removeKeyMonitor()
         self.windowObserver = nil
         
         super.textDidEndEditing(notification)
@@ -104,5 +101,17 @@ final class ShortcutField: NSTextField, NSTextViewDelegate {
         
         // disable contextual menu for field editor
         nil
+    }
+    
+    
+    // MARK: Private Methods
+    
+    /// Remove key down monitoring.
+    private func removeKeyMonitor() {
+        
+        if let monitor = self.keyDownMonitor {
+            NSEvent.removeMonitor(monitor)
+            self.keyDownMonitor = nil
+        }
     }
 }

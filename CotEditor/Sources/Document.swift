@@ -120,8 +120,8 @@ final class Document: NSDocument, AdditionalDocumentPreparing, EncodingChanging 
         
         // observe syntax update
         self.syntaxUpdateObserver = SyntaxManager.shared.didUpdateSetting
-            .filter { [weak self] (change) in change.old == self?.syntaxParser.syntax.name }
-            .sink { [weak self] (change) in self?.setSyntax(name: change.new ?? BundledSyntaxName.none) }
+            .filter { [weak self] change in change.old == self?.syntaxParser.syntax.name }
+            .sink { [weak self] change in self?.setSyntax(name: change.new ?? BundledSyntaxName.none) }
     }
     
     
@@ -161,7 +161,7 @@ final class Document: NSDocument, AdditionalDocumentPreparing, EncodingChanging 
         }
         
         if let string = coder.decodeObject(of: NSString.self, forKey: SerializationKey.originalContentString) as? String {
-            self.replaceContent(with: string)
+            self.textStorage.replaceContent(with: string)
         }
     }
     
@@ -280,38 +280,15 @@ final class Document: NSDocument, AdditionalDocumentPreparing, EncodingChanging 
         // -> Presented errors will be displayed again after the revert automatically. (since OS X 10.10)
         self.windowForSheet?.sheets.forEach { $0.close() }
         
-        // store current selections
-        let lastString = self.textStorage.string.immutable
-        let editorStates = self.textStorage.layoutManagers
-            .compactMap(\.textViewForBeginningOfSelection)
-            .map { (textView: $0, ranges: $0.selectedRanges.map(\.rangeValue)) }
+        let selection = self.textStorage.editorSelection
         
         try super.revert(toContentsOf: url, ofType: typeName)
         
         // do nothing if already no textView exists
-        guard !editorStates.isEmpty else { return }
+        guard let selection else { return }
         
-        // apply to UI
         self.applyContentToWindow()
-        
-        // select previous ranges again
-        // -> Taking performance issues into consideration,
-        //    the selection ranges will be adjusted only when the content size is small enough;
-        //    otherwise, just cut extra ranges off.
-        let string = self.textStorage.string
-        let range = self.textStorage.range
-        let maxLength = 20_000  // takes ca. 1.3 sec. with MacBook Pro 13-inch late 2016 (3.3 GHz)
-        let considersDiff = lastString.length < maxLength || string.length < maxLength
-        
-        for state in editorStates {
-            let selectedRanges = considersDiff
-                ? string.equivalentRanges(to: state.ranges, in: lastString)
-                : state.ranges.map { $0.intersection(range) ?? NSRange(location: range.upperBound, length: 0) }
-            
-            guard !selectedRanges.isEmpty else { continue }
-            
-            state.textView.selectedRanges = selectedRanges.unique as [NSValue]
-        }
+        self.textStorage.restoreEditorSelection(selection)
     }
     
     
@@ -377,7 +354,7 @@ final class Document: NSDocument, AdditionalDocumentPreparing, EncodingChanging 
         }
         
         // update textStorage
-        self.replaceContent(with: file.string)
+        self.textStorage.replaceContent(with: file.string)
         
         // set read values
         self.fileEncoding = file.fileEncoding
@@ -439,7 +416,7 @@ final class Document: NSDocument, AdditionalDocumentPreparing, EncodingChanging 
         //     2. Open the save panel once and cancel it.
         //     3. Quit the application.
         //     4. Then, the application hangs up.
-        super.save(to: url, ofType: typeName, for: saveOperation) { (error) in
+        super.save(to: url, ofType: typeName, for: saveOperation) { error in
             defer {
                 completionHandler(error)
             }
@@ -717,27 +694,29 @@ final class Document: NSDocument, AdditionalDocumentPreparing, EncodingChanging 
         guard
             UserDefaults.standard[.documentConflictOption] != .ignore,
             !self.isExternalUpdateAlertShown,  // don't check twice if already notified
-            var fileURL = self.fileURL
+            let fileURL = self.fileURL
         else { return }
         
-        // check whether the document content is really modified
-        // -> Avoid using NSFileCoordinator although the document recommends
-        //    because it causes deadlock when the document in the iCloud Document remotely modified.
-        //    (2022-08 on macOS 12.5, Xcode 14, #1296)
-        fileURL.removeCachedResourceValue(forKey: .contentModificationDateKey)
-        let data: Data
+        // ignore if file's modificationDate is the same as document's modificationDate
+        let modificationDate: Date?
         do {
-            // ignore if file's modificationDate is the same as document's modificationDate
-            let contentModificationDate = try fileURL.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate  // FILE_ACCESS
-            guard contentModificationDate != self.fileModificationDate else { return }
-            
-            // check if the file content was changed from the stored file data
-            data = try Data(contentsOf: fileURL, options: [.mappedIfSafe])  // FILE_ACCESS
+            modificationDate = try fileURL.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate  // FILE_ACCESS
         } catch {
             return assertionFailure(error.localizedDescription)
         }
+        guard let modificationDate, modificationDate != self.fileModificationDate else { return }
         
-        guard data != self.fileData else { return }
+        // check if the file content was changed from the stored file data
+        var data: Data?
+        var error: NSError?
+        NSFileCoordinator(filePresenter: self).coordinate(readingItemAt: fileURL, options: .withoutChanges, error: &error) { newURL in
+            do {
+                data = try Data(contentsOf: newURL, options: [.mappedIfSafe])  // FILE_ACCESS
+            } catch {
+                return assertionFailure(error.localizedDescription)
+            }
+        }
+        guard let data, data != self.fileData else { return }
         
         // notify about external file update
         Task {
@@ -797,17 +776,6 @@ final class Document: NSDocument, AdditionalDocumentPreparing, EncodingChanging 
     var textView: NSTextView? {
         
         self.viewController?.focusedTextView
-    }
-    
-    
-    /// Replace whole content with the given `string`.
-    ///
-    /// - Parameter string: The content string to replace with.
-    func replaceContent(with string: String) {
-        
-        assert(self.textStorage.layoutManagers.isEmpty || Thread.isMainThread)
-        
-        self.textStorage.replaceCharacters(in: self.textStorage.range, with: string)
     }
     
     
@@ -889,19 +857,25 @@ final class Document: NSDocument, AdditionalDocumentPreparing, EncodingChanging 
         
         // register undo
         if let undoManager = self.undoManager {
+            let selectedRanges = self.textStorage.layoutManagers.compactMap(\.textViewForBeginningOfSelection).map(\.selectedRange)
             undoManager.registerUndo(withTarget: self) { [currentLineEnding = self.lineEnding, string = self.textStorage.string] target in
-                target.replaceContent(with: string)
+                target.textStorage.replaceContent(with: string)
                 target.lineEnding = currentLineEnding
+                for (textView, range) in zip(target.textStorage.layoutManagers.compactMap(\.textViewForBeginningOfSelection), selectedRanges) {
+                    textView.selectedRange = range
+                }
                 
                 // register redo
-                target.undoManager?.registerUndo(withTarget: target) { $0.changeLineEnding(to: lineEnding)
-                }
+                target.undoManager?.registerUndo(withTarget: target) { $0.changeLineEnding(to: lineEnding) }
             }
             undoManager.setActionName(String(localized: "Line Endings to \(lineEnding.name)"))
         }
         
+        // update line endings in text storage
+        let string = self.textStorage.string.replacingLineEndings(with: lineEnding)
+        self.textStorage.replaceContent(with: string, keepsSelection: true)
+        
         // update line ending
-        self.textStorage.replaceLineEndings(with: lineEnding)
         self.lineEnding = lineEnding
     }
     
@@ -987,8 +961,8 @@ final class Document: NSDocument, AdditionalDocumentPreparing, EncodingChanging 
         }
         
         // change encoding interactively
-        self.performActivity(withSynchronousWaiting: true) { [unowned self] (activityCompletionHandler) in
-            let completionHandler = { [weak self] (didChange: Bool) in
+        self.performActivity(withSynchronousWaiting: true) { [unowned self] activityCompletionHandler in
+            let completionHandler = { [weak self] didChange in
                 if !didChange, let self {
                     // reset status bar selection for in case when the operation was invoked from the popup button in the status bar
                     self.fileEncoding = self.fileEncoding
@@ -1260,7 +1234,7 @@ private enum ReinterpretationError: LocalizedError {
             case .noFile:
                 String(localized: "The document doesn’t have a file to reinterpret.")
                 
-            case let .reinterpretationFailed(fileURL, encoding):
+            case .reinterpretationFailed(let fileURL, let encoding):
                 String(localized: "The file “\(fileURL.lastPathComponent)” couldn’t be reinterpreted using text encoding “\(String.localizedName(of: encoding)).”")
         }
     }

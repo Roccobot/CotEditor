@@ -81,11 +81,11 @@ class EditorTextView: NSTextView, Themable, CurrentLineHighlighting, MultiCursor
     var needsUpdateLineHighlight = true {
         
         didSet {
-            (self.lineHighLightRects + [self.visibleRect]).forEach { self.setNeedsDisplay($0, avoidAdditionalLayout: true) }
+            (self.lineHighlightRects + [self.visibleRect]).forEach { self.setNeedsDisplay($0, avoidAdditionalLayout: true) }
         }
     }
-    var lineHighLightRects: [NSRect] = []
-    private(set) var lineHighLightColor: NSColor?
+    var lineHighlightRects: [NSRect] = []
+    private(set) var lineHighlightColor: NSColor?
     
     var insertionLocations: [Int] = []  {
         
@@ -412,7 +412,7 @@ class EditorTextView: NSTextView, Themable, CurrentLineHighlighting, MultiCursor
             .sink { [weak self] in
                 self?.drawsBackground = $0
                 self?.enclosingScrollView?.drawsBackground = $0
-                self?.lineHighLightColor = self?.lineHighLightColor?.withAlphaComponent($0 ? 1.0 : 0.7)
+                self?.lineHighlightColor = self?.lineHighlightColor?.withAlphaComponent($0 ? 1.0 : 0.7)
             }
     }
     
@@ -829,7 +829,7 @@ class EditorTextView: NSTextView, Themable, CurrentLineHighlighting, MultiCursor
         
         // remove official selectedRanges from the sub insertion points
         let selectedRanges = self.selectedRanges.map(\.rangeValue)
-        self.insertionLocations.removeAll { (location) in selectedRanges.contains { $0.touches(location) } }
+        self.insertionLocations.removeAll { location in selectedRanges.contains { $0.touches(location) } }
         
         if !stillSelectingFlag, !self.hasMultipleInsertions {
             self.selectionOrigins = [self.selectedRange.location]
@@ -1344,14 +1344,12 @@ class EditorTextView: NSTextView, Themable, CurrentLineHighlighting, MultiCursor
         // substring all selected attributed strings
         let selections: [NSAttributedString] = self.selectedRanges
             .map(\.rangeValue)
-            .map { (selectedRange) in
+            .map { selectedRange in
                 let plainText = (self.string as NSString).substring(with: selectedRange)
                 let styledText = NSMutableAttributedString(string: plainText, attributes: self.typingAttributes)
                 
                 // apply syntax highlight that is set as temporary attributes in layout manager to attributed string
-                self.layoutManager?.enumerateTemporaryAttribute(.foregroundColor, in: selectedRange) { (value, range, _) in
-                    guard let color = value as? NSColor else { return }
-                    
+                self.layoutManager?.enumerateTemporaryAttribute(.foregroundColor, type: NSColor.self, in: selectedRange) { (color, range, _) in
                     let localRange = range.shifted(by: -selectedRange.location)
                     
                     styledText.addAttribute(.foregroundColor, value: color, range: localRange)
@@ -1421,7 +1419,7 @@ class EditorTextView: NSTextView, Themable, CurrentLineHighlighting, MultiCursor
         
         self.textColor = theme.text.color
         self.backgroundColor = theme.background.color
-        self.lineHighLightColor = self.isOpaque
+        self.lineHighlightColor = self.isOpaque
             ? theme.lineHighlight.color
             : theme.lineHighlight.color.withAlphaComponent(0.7)
         self.insertionPointColor = theme.effectiveInsertionPointColor

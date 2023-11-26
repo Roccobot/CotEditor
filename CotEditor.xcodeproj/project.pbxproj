@@ -169,6 +169,7 @@
 		2A3643E71E7C3D2400EA3CE8 /* ReplacementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3643E51E7C3D2400EA3CE8 /* ReplacementManager.swift */; };
 		2A36CE7C1FF654C000020702 /* NSTextView+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A36CE7B1FF654C000020702 /* NSTextView+Snippet.swift */; };
 		2A36CE7D1FF654C000020702 /* NSTextView+Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A36CE7B1FF654C000020702 /* NSTextView+Snippet.swift */; };
+		2A36E36F2AF9ED0B00A73534 /* Sparkle.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A36E3702AF9ED0B00A73534 /* Sparkle.xcstrings */; };
 		2A38FAFD1D1C67050032231A /* DraggableArrayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38FAFC1D1C67050032231A /* DraggableArrayController.swift */; };
 		2A38FAFE1D1C67050032231A /* DraggableArrayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38FAFC1D1C67050032231A /* DraggableArrayController.swift */; };
 		2A38FB001D1C6B6D0032231A /* DefinitionTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A38FAFF1D1C6B6D0032231A /* DefinitionTableViewDelegate.swift */; };
@@ -284,13 +285,18 @@
 		2A5DCE861D1888D800D5D74C /* SyntaxMappingConflictsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5DCE851D1888D800D5D74C /* SyntaxMappingConflictsView.swift */; };
 		2A5DCE871D1888D800D5D74C /* SyntaxMappingConflictsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5DCE851D1888D800D5D74C /* SyntaxMappingConflictsView.swift */; };
 		2A5DCE8A1D18FFDB00D5D74C /* EncodingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5DCE881D18FFDB00D5D74C /* EncodingListView.swift */; };
+		2A5E41052B0AEFBB00D5EA20 /* CommandBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E41042B0AEFBB00D5EA20 /* CommandBarView.swift */; };
+		2A5E41062B0AEFBB00D5EA20 /* CommandBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E41042B0AEFBB00D5EA20 /* CommandBarView.swift */; };
+		2A5E41082B0AF62100D5EA20 /* CommandBarWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E41072B0AF62100D5EA20 /* CommandBarWindowController.swift */; };
+		2A5E41092B0AF62100D5EA20 /* CommandBarWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E41072B0AF62100D5EA20 /* CommandBarWindowController.swift */; };
+		2A5E410B2B0B559300D5EA20 /* ActionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E410A2B0B559300D5EA20 /* ActionCommand.swift */; };
+		2A5E410C2B0B559400D5EA20 /* ActionCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5E410A2B0B559300D5EA20 /* ActionCommand.swift */; };
 		2A5E6FC12A72342700E33EA7 /* UnicodeNormalization.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E6FC02A72342700E33EA7 /* UnicodeNormalization.xcstrings */; };
 		2A5E6FC22A72342700E33EA7 /* UnicodeNormalization.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E6FC02A72342700E33EA7 /* UnicodeNormalization.xcstrings */; };
 		2A5E6FC42A723CEA00E33EA7 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E6FC32A723CE900E33EA7 /* InfoPlist.xcstrings */; };
 		2A5E6FC52A723CEA00E33EA7 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E6FC32A723CE900E33EA7 /* InfoPlist.xcstrings */; };
 		2A5E6FC72A723F3C00E33EA7 /* ServicesMenu.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E6FC62A723F3C00E33EA7 /* ServicesMenu.xcstrings */; };
 		2A5E6FC82A723F3C00E33EA7 /* ServicesMenu.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E6FC62A723F3C00E33EA7 /* ServicesMenu.xcstrings */; };
-		2A5EA16E2A88FAEE00D16730 /* Sparkle.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2A5EA16C2A88FAEE00D16730 /* Sparkle.xcstrings */; };
 		2A5EDDBB241B649C00A07810 /* moof.textClipping in Resources */ = {isa = PBXBuildFile; fileRef = 2A5EDDBA241B649C00A07810 /* moof.textClipping */; };
 		2A5EDDBD241B64EB00A07810 /* TextClippingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5EDDBC241B64EB00A07810 /* TextClippingTests.swift */; };
 		2A5F7CA51D152589001D83BC /* NavigationBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5F7CA31D152589001D83BC /* NavigationBar.storyboard */; };
@@ -368,6 +374,8 @@
 		2A73B5BD1D468DD30025337F /* Unicode.Scalar+Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73B5BB1D468DD30025337F /* Unicode.Scalar+Information.swift */; };
 		2A73B9332A8F6620002F3A16 /* RegexTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73B9322A8F6620002F3A16 /* RegexTextField.swift */; };
 		2A73B9342A8F6620002F3A16 /* RegexTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A73B9322A8F6620002F3A16 /* RegexTextField.swift */; };
+		2A7470692B12FA5700669A7B /* NSTextStorage+TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7470682B12FA5700669A7B /* NSTextStorage+TextView.swift */; };
+		2A74706A2B12FA5700669A7B /* NSTextStorage+TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7470682B12FA5700669A7B /* NSTextStorage+TextView.swift */; };
 		2A75ACCB19E86DDB00444894 /* CotEditor.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 2A75ACCA19E86DDB00444894 /* CotEditor.sdef */; };
 		2A7646E71D48EAF200350674 /* SettingManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7646E61D48EAF200350674 /* SettingManaging.swift */; };
 		2A7646E81D48EAF200350674 /* SettingManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7646E61D48EAF200350674 /* SettingManaging.swift */; };
@@ -692,6 +700,10 @@
 		2AE12E011E7DDB1B00681F72 /* EditorTextView+SurroundSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE12DFF1E7DDB1B00681F72 /* EditorTextView+SurroundSelection.swift */; };
 		2AE12E071E7DDF0700681F72 /* CustomSurroundStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE12E061E7DDF0700681F72 /* CustomSurroundStringView.swift */; };
 		2AE12E081E7DDF0700681F72 /* CustomSurroundStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE12E061E7DDF0700681F72 /* CustomSurroundStringView.swift */; };
+		2AE144B62B00A963005E8CF1 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE144B52B00A963005E8CF1 /* Identifiable.swift */; };
+		2AE144B72B00A963005E8CF1 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE144B52B00A963005E8CF1 /* Identifiable.swift */; };
+		2AE144C42B0222DB005E8CF1 /* LiveTextInsertionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE144C32B0222DB005E8CF1 /* LiveTextInsertionView.swift */; };
+		2AE144C52B0222DB005E8CF1 /* LiveTextInsertionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE144C32B0222DB005E8CF1 /* LiveTextInsertionView.swift */; };
 		2AE3F3181D3F8A1F005B8724 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE3F3171D3F8A1F005B8724 /* NSAttributedString.swift */; };
 		2AE3F3191D3F8A1F005B8724 /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE3F3171D3F8A1F005B8724 /* NSAttributedString.swift */; };
 		2AE52F1B1D17493B00D60A32 /* FilePermissionsFormatStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE52F1A1D17493B00D60A32 /* FilePermissionsFormatStyle.swift */; };
@@ -713,8 +725,6 @@
 		2AE7A8DA20450FE600830830 /* OutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE7A8D820450FE600830830 /* OutlineViewController.swift */; };
 		2AE95A1A2A86270000E85CF5 /* HoleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE95A192A86270000E85CF5 /* HoleContentView.swift */; };
 		2AE95A1B2A86270000E85CF5 /* HoleContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE95A192A86270000E85CF5 /* HoleContentView.swift */; };
-		2AE95A262A89055300E85CF5 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE95A252A89055300E85CF5 /* Optional.swift */; };
-		2AE95A272A89055300E85CF5 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE95A252A89055300E85CF5 /* Optional.swift */; };
 		2AEAA8232096380C001A175C /* HighlightExtractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAA8222096380C001A175C /* HighlightExtractors.swift */; };
 		2AEAA8242096380C001A175C /* HighlightExtractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEAA8222096380C001A175C /* HighlightExtractors.swift */; };
 		2AEB8B442726220000C2F3DD /* IncompatibleCharacterFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEB8B432726220000C2F3DD /* IncompatibleCharacterFormatter.swift */; };
@@ -956,6 +966,7 @@
 		2A359DFD1DAE93EE00FEF7AA /* NSWindow+Responder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSWindow+Responder.swift"; sourceTree = "<group>"; };
 		2A3643E51E7C3D2400EA3CE8 /* ReplacementManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplacementManager.swift; sourceTree = "<group>"; };
 		2A36CE7B1FF654C000020702 /* NSTextView+Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextView+Snippet.swift"; sourceTree = "<group>"; };
+		2A36E3702AF9ED0B00A73534 /* Sparkle.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Sparkle.xcstrings; path = mul.lproj/Sparkle.xcstrings; sourceTree = "<group>"; };
 		2A38FAFC1D1C67050032231A /* DraggableArrayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableArrayController.swift; sourceTree = "<group>"; };
 		2A38FAFF1D1C6B6D0032231A /* DefinitionTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefinitionTableViewDelegate.swift; sourceTree = "<group>"; };
 		2A39F15626F74C2500B52876 /* AccessibleStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibleStepper.swift; sourceTree = "<group>"; };
@@ -1034,6 +1045,9 @@
 		2A5DCE851D1888D800D5D74C /* SyntaxMappingConflictsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxMappingConflictsView.swift; sourceTree = "<group>"; };
 		2A5DCE881D18FFDB00D5D74C /* EncodingListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodingListView.swift; sourceTree = "<group>"; };
 		2A5DD44122793B9B0057AAD1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = fr; path = fr.lproj/ReportTemplate.md; sourceTree = "<group>"; };
+		2A5E41042B0AEFBB00D5EA20 /* CommandBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandBarView.swift; sourceTree = "<group>"; };
+		2A5E41072B0AF62100D5EA20 /* CommandBarWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandBarWindowController.swift; sourceTree = "<group>"; };
+		2A5E410A2B0B559300D5EA20 /* ActionCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCommand.swift; sourceTree = "<group>"; };
 		2A5E6FC02A72342700E33EA7 /* UnicodeNormalization.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = UnicodeNormalization.xcstrings; path = mul.lproj/UnicodeNormalization.xcstrings; sourceTree = "<group>"; };
 		2A5E6FC32A723CE900E33EA7 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = InfoPlist.xcstrings; path = mul.lproj/InfoPlist.xcstrings; sourceTree = "<group>"; };
 		2A5E6FC62A723F3C00E33EA7 /* ServicesMenu.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = ServicesMenu.xcstrings; path = mul.lproj/ServicesMenu.xcstrings; sourceTree = "<group>"; };
@@ -1048,7 +1062,6 @@
 		2A5EA1632A88EAC100D16730 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/OutlineView.xcstrings; sourceTree = "<group>"; };
 		2A5EA1662A88F54800D16730 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/PrintPanelAccessory.xcstrings; sourceTree = "<group>"; };
 		2A5EA1672A88F70C00D16730 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/Main.xcstrings; sourceTree = "<group>"; };
-		2A5EA16D2A88FAEE00D16730 /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = CotEditor/mul.lproj/Sparkle.xcstrings; sourceTree = "<group>"; };
 		2A5EDDBA241B649C00A07810 /* moof.textClipping */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = moof.textClipping; path = TestFiles/moof.textClipping; sourceTree = "<group>"; };
 		2A5EDDBC241B64EB00A07810 /* TextClippingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextClippingTests.swift; sourceTree = "<group>"; };
 		2A5F7CA41D152589001D83BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NavigationBar.storyboard; sourceTree = "<group>"; };
@@ -1093,6 +1106,7 @@
 		2A73B5B31D4675350025337F /* Unicode.Scalar+ControlCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Unicode.Scalar+ControlCharacter.swift"; sourceTree = "<group>"; };
 		2A73B5BB1D468DD30025337F /* Unicode.Scalar+Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Unicode.Scalar+Information.swift"; sourceTree = "<group>"; };
 		2A73B9322A8F6620002F3A16 /* RegexTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexTextField.swift; sourceTree = "<group>"; };
+		2A7470682B12FA5700669A7B /* NSTextStorage+TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextStorage+TextView.swift"; sourceTree = "<group>"; };
 		2A75ACCA19E86DDB00444894 /* CotEditor.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CotEditor.sdef; sourceTree = "<group>"; };
 		2A7646E61D48EAF200350674 /* SettingManaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingManaging.swift; sourceTree = "<group>"; };
 		2A7646E91D48ECD100350674 /* SettingFileManaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingFileManaging.swift; sourceTree = "<group>"; };
@@ -1290,6 +1304,8 @@
 		2AE12DFD1E7DB7D200681F72 /* StringCollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringCollectionTests.swift; sourceTree = "<group>"; };
 		2AE12DFF1E7DDB1B00681F72 /* EditorTextView+SurroundSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditorTextView+SurroundSelection.swift"; sourceTree = "<group>"; };
 		2AE12E061E7DDF0700681F72 /* CustomSurroundStringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSurroundStringView.swift; sourceTree = "<group>"; };
+		2AE144B52B00A963005E8CF1 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		2AE144C32B0222DB005E8CF1 /* LiveTextInsertionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveTextInsertionView.swift; sourceTree = "<group>"; };
 		2AE3F3171D3F8A1F005B8724 /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
 		2AE439CF20A127DD00EED807 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/MultipleReplacePanel.strings; sourceTree = "<group>"; };
 		2AE439D120A127EE00EED807 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MultipleReplacePanel.strings"; sourceTree = "<group>"; };
@@ -1309,7 +1325,6 @@
 		2AE7A8D520450C0000830830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OutlineView.storyboard; sourceTree = "<group>"; };
 		2AE7A8D820450FE600830830 /* OutlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineViewController.swift; sourceTree = "<group>"; };
 		2AE95A192A86270000E85CF5 /* HoleContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoleContentView.swift; sourceTree = "<group>"; };
-		2AE95A252A89055300E85CF5 /* Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Optional.swift; sourceTree = "<group>"; };
 		2AEAA8222096380C001A175C /* HighlightExtractors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightExtractors.swift; sourceTree = "<group>"; };
 		2AEB8B432726220000C2F3DD /* IncompatibleCharacterFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncompatibleCharacterFormatter.swift; sourceTree = "<group>"; };
 		2AEBD259246BB4C200EC97A3 /* NSAttributedStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringTests.swift; sourceTree = "<group>"; };
@@ -1471,6 +1486,7 @@
 				2AFD328829482D53000ED1C5 /* Color.swift */,
 				2A8321732980C41600F87D35 /* Image+Status.swift */,
 				2A231A271E7BD82700C2A909 /* Binding.swift */,
+				2AE144B52B00A963005E8CF1 /* Identifiable.swift */,
 			);
 			name = SwiftUI;
 			sourceTree = "<group>";
@@ -1627,6 +1643,7 @@
 		2A180F462854E58400EBAF66 /* TextKit */ = {
 			isa = PBXGroup;
 			children = (
+				2A7470682B12FA5700669A7B /* NSTextStorage+TextView.swift */,
 				2AE73F3F203D2FBB00D8903B /* NSLayoutManager.swift */,
 				2A9AC936244849B700D05643 /* NSLayoutManager+InvisibleDrawing.swift */,
 				2A484A38236579A7006FFD14 /* NSLayoutManager+ValidationIgnorable.swift */,
@@ -1654,7 +1671,6 @@
 				2A5ADE831D2168FC00F6CE26 /* Collection.swift */,
 				2A5C00332814698000700CAE /* Collection+BinarySearch.swift */,
 				2A1A4EAF24FB9D9300B50AA0 /* Combine.swift */,
-				2AE95A252A89055300E85CF5 /* Optional.swift */,
 			);
 			name = Swift;
 			sourceTree = "<group>";
@@ -1829,9 +1845,10 @@
 				2A7CF2441A5747F400D09249 /* Text Finder */,
 				2A42825318FCC22100386899 /* Document */,
 				2A80BE9327FFFBAB00D2F7FF /* Scanners */,
-				2A9F58E628AAB07500346A98 /* Scripting Support */,
 				2A42825418FCC23400386899 /* Document Window */,
 				2A42825218FCC1C100386899 /* Text View */,
+				2AFFB72E18D8E87900118477 /* Panels */,
+				2A9F58E628AAB07500346A98 /* Scripting Support */,
 				2A15832C18E3A29A00601026 /* Views */,
 				2A53F5692758912600ED16DF /* SwiftUI */,
 				2A476CAF1D09CA640088E37A /* Models */,
@@ -1863,7 +1880,7 @@
 				2AAF93552A73DEE600CCC4A7 /* LineEnding.xcstrings */,
 				2A5E6FC02A72342700E33EA7 /* UnicodeNormalization.xcstrings */,
 				2AA2E0111BFE12620087BDD6 /* UnicodeBlock.strings */,
-				2A5EA16C2A88FAEE00D16730 /* Sparkle.xcstrings */,
+				2A36E3702AF9ED0B00A73534 /* Sparkle.xcstrings */,
 				2A80C65C1CEE33C100AA664D /* Credits.html */,
 				2A80C6661CEE540F00AA664D /* Acknowledgments.html */,
 				2A456C421A1EDCFC00395158 /* ReportTemplate.md */,
@@ -1979,7 +1996,6 @@
 				2A2184221D043D7E00522EF5 /* Document View */,
 				2AD2861919856F3100C9342F /* Editor */,
 				2A6602EB1D05E04E003E8D87 /* Accessory Views */,
-				2AFFB72E18D8E87900118477 /* Panels */,
 				2A0E160B18E7240C00AAD872 /* Print */,
 			);
 			name = "Document Window";
@@ -2054,6 +2070,16 @@
 				2A04E9C127FEF737008C82D8 /* SwiftUI */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		2A5E410D2B0CE4DB00D5EA20 /* Command Bar */ = {
+			isa = PBXGroup;
+			children = (
+				2A5E41072B0AF62100D5EA20 /* CommandBarWindowController.swift */,
+				2A5E41042B0AEFBB00D5EA20 /* CommandBarView.swift */,
+				2A5E410A2B0B559300D5EA20 /* ActionCommand.swift */,
+			);
+			name = "Command Bar";
 			sourceTree = "<group>";
 		};
 		2A6602EB1D05E04E003E8D87 /* Accessory Views */ = {
@@ -2344,6 +2370,7 @@
 				2A2615882977FCF6008C2240 /* SubmitButtonGroup.swift */,
 				2A5D13121D1EE8FF00D38E6A /* HUDView.swift */,
 				2AA175F92AC5634500F6462C /* PopoverHolderView.swift */,
+				2AE144C32B0222DB005E8CF1 /* LiveTextInsertionView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -2386,6 +2413,7 @@
 			children = (
 				2A5D13091D1ED10400D38E6A /* ConsolePanelController.swift */,
 				2A4257AF1D22FD490086DAAD /* ColorCodePanelController.swift */,
+				2A5E410D2B0CE4DB00D5EA20 /* Command Bar */,
 			);
 			name = Panels;
 			sourceTree = "<group>";
@@ -2601,12 +2629,12 @@
 				2A80C6691CEE540F00AA664D /* Acknowledgments.html in Resources */,
 				2AE73EC9203520E100D8903B /* Acknowledgments.css in Resources */,
 				2A6F0D5D1B5500E100C2D03C /* ReportTemplate.md in Resources */,
-				2A954B242AB28B010070FB74 /* Count.xcstrings in Resources */,
 				2A6F0D801B5500E100C2D03C /* Localizable.strings in Resources */,
 				2AAF93562A73DEE600CCC4A7 /* LineEnding.xcstrings in Resources */,
 				2A5E6FC12A72342700E33EA7 /* UnicodeNormalization.xcstrings in Resources */,
 				2A5E6FC42A723CEA00E33EA7 /* InfoPlist.xcstrings in Resources */,
 				2A5E6FC72A723F3C00E33EA7 /* ServicesMenu.xcstrings in Resources */,
+				2A954B242AB28B010070FB74 /* Count.xcstrings in Resources */,
 				2AA2E0141BFE12620087BDD6 /* UnicodeBlock.strings in Resources */,
 				2A836F811D572A5D0044E8EC /* Main.storyboard in Resources */,
 				2ACDE28D2406B9C000FC31EC /* AppearancePane.storyboard in Resources */,
@@ -2667,9 +2695,9 @@
 				2A5E6FC22A72342700E33EA7 /* UnicodeNormalization.xcstrings in Resources */,
 				2A5E6FC52A723CEA00E33EA7 /* InfoPlist.xcstrings in Resources */,
 				2A5E6FC82A723F3C00E33EA7 /* ServicesMenu.xcstrings in Resources */,
-				2AA2E0131BFE12620087BDD6 /* UnicodeBlock.strings in Resources */,
-				2A5EA16E2A88FAEE00D16730 /* Sparkle.xcstrings in Resources */,
 				2A954B252AB28B010070FB74 /* Count.xcstrings in Resources */,
+				2A36E36F2AF9ED0B00A73534 /* Sparkle.xcstrings in Resources */,
+				2AA2E0131BFE12620087BDD6 /* UnicodeBlock.strings in Resources */,
 				2A836F801D572A5D0044E8EC /* Main.storyboard in Resources */,
 				2A10D1281E714D230027192A /* AppearancePane.storyboard in Resources */,
 				2A4144BC201397D70061F653 /* DocumentInspectorView.storyboard in Resources */,
@@ -2800,6 +2828,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A39F15726F74C2500B52876 /* AccessibleStepper.swift in Sources */,
+				2A5E410B2B0B559300D5EA20 /* ActionCommand.swift in Sources */,
 				2AF29EC42882EE7700DF31D2 /* AdvancedCharacterCounter.swift in Sources */,
 				2A04E9C327FEFA86008C82D8 /* AdvancedCharacterCounterView.swift in Sources */,
 				2A73B9332A8F6620002F3A16 /* RegexTextField.swift in Sources */,
@@ -2828,6 +2857,8 @@
 				2AFD328929482D53000ED1C5 /* Color.swift in Sources */,
 				2A4257B11D22FD490086DAAD /* ColorCodePanelController.swift in Sources */,
 				2A1A4EB024FB9D9300B50AA0 /* Combine.swift in Sources */,
+				2A5E41052B0AEFBB00D5EA20 /* CommandBarView.swift in Sources */,
+				2A5E41082B0AF62100D5EA20 /* CommandBarWindowController.swift in Sources */,
 				2AC13A0924F112D800799A93 /* CommandLineToolManager.swift in Sources */,
 				2A885E341D5C3A1B00288723 /* Comparable.swift in Sources */,
 				2A5D130B1D1ED10400D38E6A /* ConsolePanelController.swift in Sources */,
@@ -2912,6 +2943,7 @@
 				2AAD61F91D2BA3F5008FE772 /* HighlightParser.swift in Sources */,
 				2AE95A1A2A86270000E85CF5 /* HoleContentView.swift in Sources */,
 				2A5D13141D1EE8FF00D38E6A /* HUDView.swift in Sources */,
+				2AE144B62B00A963005E8CF1 /* Identifiable.swift in Sources */,
 				2A8321742980C41600F87D35 /* Image+Status.swift in Sources */,
 				2A8C33901D3E1C040005B0B7 /* IncompatibleCharacter.swift in Sources */,
 				2AEB8B442726220000C2F3DD /* IncompatibleCharacterFormatter.swift in Sources */,
@@ -2935,6 +2967,7 @@
 				2A1125C423F1A86B006A1DB2 /* LineRangeCacheable.swift in Sources */,
 				2A1893AB1FFF422D00AD244F /* LineSort.swift in Sources */,
 				2A59B7032957089A0094F03B /* LinkButton.swift in Sources */,
+				2AE144C42B0222DB005E8CF1 /* LiveTextInsertionView.swift in Sources */,
 				2A8961931DB76A3400E9E0EC /* MainMenu.swift in Sources */,
 				2A3581991E597ECE00762AA5 /* MultipleReplace.swift in Sources */,
 				2A231A261E7B4EDC00C2A909 /* MultipleReplace+Codable.swift in Sources */,
@@ -2971,6 +3004,7 @@
 				2A6FD9EE1D3A85D700A59784 /* NSString.swift in Sources */,
 				2AF63BA82A6FA4D900E1258E /* NSTableView.swift in Sources */,
 				2A180F4B2854E71800EBAF66 /* NSTextSelectionDataSource.swift in Sources */,
+				2A7470692B12FA5700669A7B /* NSTextStorage+TextView.swift in Sources */,
 				2ABBACA21E3F1D1C00A080E7 /* NSTextStorage+ScriptingSupport.swift in Sources */,
 				2A3A19E3206C9A0700516DE4 /* NSTextView+BracePair.swift in Sources */,
 				2A1311D72127DCE1001D52C5 /* NSTextView+CurrentLineHighlighting.swift in Sources */,
@@ -2995,7 +3029,6 @@
 				2AC3845420C929950003F213 /* OpacitySampleView.swift in Sources */,
 				2A158C222945F54B000A4EC1 /* OpacityView.swift in Sources */,
 				2AC6069C20416ADE00F9C839 /* OpenPanelAccessory.swift in Sources */,
-				2AE95A262A89055300E85CF5 /* Optional.swift in Sources */,
 				2A3E61BF27C3795B00C6E5B6 /* OptionalMenu.swift in Sources */,
 				2A88E7721E81A2C7000019C6 /* OrderedSet.swift in Sources */,
 				2A8458962A073C830056B1EA /* OutlineDefinition.swift in Sources */,
@@ -3013,6 +3046,7 @@
 				2AFAFD4B1D41487600F1458F /* PrintTextView.swift in Sources */,
 				2A57B98F294ED75900771696 /* RangedIntegerFormatStyle.swift in Sources */,
 				2A4AF76820759BE500C47606 /* RegexFindPanelTextView.swift in Sources */,
+				2A73B9332A8F6620002F3A16 /* RegexTextField.swift in Sources */,
 				2A1814B921CF8BD500602214 /* RegularExpressionFormatter.swift in Sources */,
 				2A53F56727585A0E00ED16DF /* RegularExpressionReferenceView.swift in Sources */,
 				2A0778622072040500876277 /* RegularExpressionSyntaxType.swift in Sources */,
@@ -3160,6 +3194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A39F15826F74C2500B52876 /* AccessibleStepper.swift in Sources */,
+				2A5E410C2B0B559400D5EA20 /* ActionCommand.swift in Sources */,
 				2AF29EC52882EE7700DF31D2 /* AdvancedCharacterCounter.swift in Sources */,
 				2A04E9C427FEFA87008C82D8 /* AdvancedCharacterCounterView.swift in Sources */,
 				2ACDC09A1D172CDE009B72D6 /* AntialiasingTextField.swift in Sources */,
@@ -3187,6 +3222,8 @@
 				2AFD328A29482D53000ED1C5 /* Color.swift in Sources */,
 				2A4257B01D22FD490086DAAD /* ColorCodePanelController.swift in Sources */,
 				2A1A4EB124FB9D9300B50AA0 /* Combine.swift in Sources */,
+				2A5E41062B0AEFBB00D5EA20 /* CommandBarView.swift in Sources */,
+				2A5E41092B0AF62100D5EA20 /* CommandBarWindowController.swift in Sources */,
 				2AC13A0A24F112D800799A93 /* CommandLineToolManager.swift in Sources */,
 				2A885E331D5C3A1B00288723 /* Comparable.swift in Sources */,
 				2A5D130A1D1ED10400D38E6A /* ConsolePanelController.swift in Sources */,
@@ -3272,6 +3309,7 @@
 				2A73B9342A8F6620002F3A16 /* RegexTextField.swift in Sources */,
 				2AE95A1B2A86270000E85CF5 /* HoleContentView.swift in Sources */,
 				2A5D13131D1EE8FF00D38E6A /* HUDView.swift in Sources */,
+				2AE144B72B00A963005E8CF1 /* Identifiable.swift in Sources */,
 				2A8321752980C41600F87D35 /* Image+Status.swift in Sources */,
 				2A8C338F1D3E1C040005B0B7 /* IncompatibleCharacter.swift in Sources */,
 				2AEB8B452726220000C2F3DD /* IncompatibleCharacterFormatter.swift in Sources */,
@@ -3295,6 +3333,7 @@
 				2A1125C323F1A86B006A1DB2 /* LineRangeCacheable.swift in Sources */,
 				2A1893AA1FFF422D00AD244F /* LineSort.swift in Sources */,
 				2A59B7042957089A0094F03B /* LinkButton.swift in Sources */,
+				2AE144C52B0222DB005E8CF1 /* LiveTextInsertionView.swift in Sources */,
 				2A8961921DB76A3400E9E0EC /* MainMenu.swift in Sources */,
 				2A3581981E597ECE00762AA5 /* MultipleReplace.swift in Sources */,
 				2A231A251E7B4EDC00C2A909 /* MultipleReplace+Codable.swift in Sources */,
@@ -3331,6 +3370,7 @@
 				2A6FD9ED1D3A85D700A59784 /* NSString.swift in Sources */,
 				2AF63BA92A6FA4D900E1258E /* NSTableView.swift in Sources */,
 				2A180F4C2854E71800EBAF66 /* NSTextSelectionDataSource.swift in Sources */,
+				2A74706A2B12FA5700669A7B /* NSTextStorage+TextView.swift in Sources */,
 				2ABBACA11E3F1D1C00A080E7 /* NSTextStorage+ScriptingSupport.swift in Sources */,
 				2A3A19E2206C9A0700516DE4 /* NSTextView+BracePair.swift in Sources */,
 				2A1311D62127DCE1001D52C5 /* NSTextView+CurrentLineHighlighting.swift in Sources */,
@@ -3355,7 +3395,6 @@
 				2AC3845320C929950003F213 /* OpacitySampleView.swift in Sources */,
 				2A158C232945F54B000A4EC1 /* OpacityView.swift in Sources */,
 				2AC6069B20416ADE00F9C839 /* OpenPanelAccessory.swift in Sources */,
-				2AE95A272A89055300E85CF5 /* Optional.swift in Sources */,
 				2A3E61C027C3795B00C6E5B6 /* OptionalMenu.swift in Sources */,
 				2A88E7711E81A2C7000019C6 /* OrderedSet.swift in Sources */,
 				2A8458972A073C830056B1EA /* OutlineDefinition.swift in Sources */,
@@ -3373,6 +3412,7 @@
 				2AFAFD4A1D41487600F1458F /* PrintTextView.swift in Sources */,
 				2A57B990294ED75900771696 /* RangedIntegerFormatStyle.swift in Sources */,
 				2A4AF76720759BE500C47606 /* RegexFindPanelTextView.swift in Sources */,
+				2A73B9342A8F6620002F3A16 /* RegexTextField.swift in Sources */,
 				2A1814B821CF8BD500602214 /* RegularExpressionFormatter.swift in Sources */,
 				2A53F56827585A0E00ED16DF /* RegularExpressionReferenceView.swift in Sources */,
 				2A0778612072040500876277 /* RegularExpressionSyntaxType.swift in Sources */,
@@ -3701,14 +3741,6 @@
 			name = FindPanelFieldView.storyboard;
 			sourceTree = "<group>";
 		};
-		2A5EA16C2A88FAEE00D16730 /* Sparkle.xcstrings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2A5EA16D2A88FAEE00D16730 /* mul */,
-			);
-			name = Sparkle.xcstrings;
-			sourceTree = "<group>";
-		};
 		2A5F7CA31D152589001D83BC /* NavigationBar.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -3983,12 +4015,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Accent Color";
-				CURRENT_PROJECT_VERSION = 600;
+				CURRENT_PROJECT_VERSION = 614;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = CotEditor/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				MARKETING_VERSION = "4.6.5-alpha";
+				MARKETING_VERSION = "4.7.0-beta.3";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coteditor.CotEditor;
 				PRODUCT_NAME = CotEditor;
 			};
@@ -4000,12 +4032,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Accent Color";
-				CURRENT_PROJECT_VERSION = 600;
+				CURRENT_PROJECT_VERSION = 614;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = CotEditor/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				MARKETING_VERSION = "4.6.5-alpha";
+				MARKETING_VERSION = "4.7.0-beta.3";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coteditor.CotEditor;
 				PRODUCT_NAME = CotEditor;
 			};
@@ -4043,12 +4075,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Accent Color";
-				CURRENT_PROJECT_VERSION = 600;
+				CURRENT_PROJECT_VERSION = 614;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = CotEditor/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				MARKETING_VERSION = "4.6.5-alpha";
+				MARKETING_VERSION = "4.7.0-beta.3";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coteditor.CotEditor;
 				PRODUCT_NAME = CotEditor;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SPARKLE";
@@ -4061,12 +4093,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Accent Color";
-				CURRENT_PROJECT_VERSION = 600;
+				CURRENT_PROJECT_VERSION = 614;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = CotEditor/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				MARKETING_VERSION = "4.6.5-alpha";
+				MARKETING_VERSION = "4.7.0-beta.3";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coteditor.CotEditor;
 				PRODUCT_NAME = CotEditor;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SPARKLE";
