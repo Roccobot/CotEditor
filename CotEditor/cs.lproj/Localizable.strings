@@ -119,9 +119,6 @@
 "Advanced options" = "Pokročilé volby";
 "Show advanced options" = "Zobrazit pokročilé volby";
 
-
-// Buttons
-
 // pairs of button label and its tooltip
 "Close" = "Zavřít";
 "Close find result." = "Zavřít výsledek hledání.";
