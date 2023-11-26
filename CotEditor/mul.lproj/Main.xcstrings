@@ -1409,6 +1409,12 @@
       "comment" : "Class = \"NSMenuItem\"; title = \"Show Quick Actions…\"; ObjectID = \"7Su-OV-TgR\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zobrazit rychlé akce…"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15989,6 +15995,12 @@
       "comment" : "Class = \"NSMenuItem\"; title = \"Insert from iPhone or iPad\"; ObjectID = \"srI-0X-faq\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vložit z iPhonu nebo iPadu"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
