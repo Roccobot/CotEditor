@@ -516,6 +516,7 @@
 "Delete Duplicate Lines" = "Smazat duplicitní řádky";
 "Duplicate Line" = "Duplicitní řádek";
 "Delete Line" = "Smazat řádek";
+"Join Lines" = "Spojit řádky";
 "Trim Trailing Whitespace" = "Oříznout koncové mezery";
 
 // Contextual menu items

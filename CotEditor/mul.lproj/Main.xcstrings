@@ -16307,6 +16307,12 @@
       "comment" : "Class = \"NSMenuItem\"; title = \"Join Lines\"; ObjectID = \"te2-4F-YwD\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spojit řádky"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
