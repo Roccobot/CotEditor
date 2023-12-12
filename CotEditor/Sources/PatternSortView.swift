@@ -88,10 +88,12 @@ struct PatternSortView: View {
                         .gridColumnAlignment(.trailing)
                     
                     VStack(alignment: .leading) {
-                        Picker("", selection: $sortKey) {
+                        Picker(selection: $sortKey) {
                             Text("Entire line").tag(SortKey.entire)
                             Text("Column").tag(SortKey.column)
                             Text("Regular expression").tag(SortKey.regularExpression)
+                        } label: {
+                            EmptyView()
                         }
                         .pickerStyle(.radioGroup)
                         .horizontalRadioGroupLayout()
@@ -213,12 +215,12 @@ struct ColumnSortPatternView: View {
         
         HStack {
             LabeledContent("Delimiter:") {
-                TextField("", text: $pattern.delimiter, prompt: Text(verbatim: ","))
+                TextField(text: $pattern.delimiter, prompt: Text(verbatim: ","), label: EmptyView.init)
                     .frame(width: 32)
             }.padding(.trailing)
             
             LabeledContent("Position:") {
-                StepperNumberField(value: $pattern.column, in: 1...(.max), prompt: Text(1, format: .number))
+                StepperNumberField(value: $pattern.column, default: 1, in: 1...(.max))
             }
         }.fixedSize()
     }
@@ -243,7 +245,7 @@ struct RegularExpressionSortPatternView: View {
                     ZStack(alignment: .leadingFirstTextBaseline) {
                         RegexTextField(text: $pattern.searchPattern, prompt: "Regular Expression")
                             .leadingInset(18)
-                        Menu("") {
+                        Menu {
                             let patterns = UserDefaults.standard[.regexPatternSortHistory]
                             
                             Section("Recents") {
@@ -257,9 +259,12 @@ struct RegularExpressionSortPatternView: View {
                             if !patterns.isEmpty {
                                 Button("Clear Recents", role: .destructive, action: self.clearRecents)
                             }
-                        }.menuStyle(.borderlessButton)
-                            .frame(width: 16)
-                            .padding(.leading, 4)
+                        } label: {
+                            EmptyView()
+                        }
+                        .menuStyle(.borderlessButton)
+                        .frame(width: 16)
+                        .padding(.leading, 4)
                     }
                     
                     HStack {
@@ -283,9 +288,8 @@ struct RegularExpressionSortPatternView: View {
         
         HStack {
             Toggle("Use captured group:", isOn: $pattern.usesCaptureGroup)
-            StepperNumberField(value: $pattern.group,
-                               in: 0...self.pattern.numberOfCaptureGroups,
-                               prompt: Text(1, format: .number))
+            StepperNumberField(value: $pattern.group, default: 1,
+                               in: 0...self.pattern.numberOfCaptureGroups)
                 .disabled(!self.pattern.usesCaptureGroup)
         }.fixedSize()
     }

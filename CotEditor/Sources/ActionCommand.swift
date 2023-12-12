@@ -42,6 +42,7 @@ struct ActionCommand: Identifiable {
     var shortcut: Shortcut?
     
     var action: Selector
+    var target: Any?
     var tag: Int = 0
     var representedObject: Any?
     
@@ -56,7 +57,7 @@ struct ActionCommand: Identifiable {
         sender.tag = self.tag
         sender.representedObject = self.representedObject
         
-        return NSApp.sendAction(self.action, to: nil, from: sender)
+        return NSApp.sendAction(self.action, to: self.target, from: sender)
     }
 }
 
@@ -94,9 +95,22 @@ extension ActionCommand {
 }
 
 
-extension NSMenuItem {
+extension NSApplication {
     
-    /// The flat collection of `ActionCommand` representation including  descendant items.
+    /// All active ActionCommands in the main menu for the Quick Action bar.
+    var actionCommands: [ActionCommand] {
+        
+        self.mainMenu?.items.flatMap(\.actionCommands) ?? []
+    }
+}
+
+
+
+// MARK: - Private Extensions
+
+private extension NSMenuItem {
+    
+    /// The flat collection of `ActionCommand` representation including descendant items.
     var actionCommands: [ActionCommand] {
         
         if let submenu = self.submenu {
@@ -111,7 +125,7 @@ extension NSMenuItem {
             
         } else if self.isEnabled, !self.isHidden, let action = self.action, !ActionCommand.unsupportedActions.contains(action) {
             return [ActionCommand(kind: (action == #selector(ScriptManager.launchScript)) ? .script : .command,
-                                  title: self.actionTitle, paths: [], shortcut: self.shortcut, action: action, tag: self.tag,
+                                  title: self.actionTitle, paths: [], shortcut: self.shortcut?.normalized, action: action, target: self.target, tag: self.tag,
                                   representedObject: self.representedObject)]
             
         } else {

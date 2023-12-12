@@ -18,8 +18,37 @@
 
 <article>
 	<header>
+		<h1>CotEditor 4.7.1</h1>
+		<p>release: <time>2023-12-12</time></p>
+	</header>
+
+
+	<section>
+		<h2>New Features</h2>
+
+		<ul>
+			<li>Add “Join Lines” command to the Text menu.</li>
+		</ul>
+	</section>
+
+
+	<section>
+		<h2>Fixes</h2>
+
+		<ul>
+			<li>Fix an issue on CotEditor 4.7.0 that documents did not update when the file was modified by a command-line process.</li>
+			<li>Fix an issue on CotEditor 4.7.0 that the last letter of some script names with a period could be wrongly interpreted as shortcut keys.</li>
+			<li>Fix an issue on CotEditor 4.7.0 that some kinds of actions, such as scripts, could not performed via the Quick Action bar.</li>
+			<li>Fix an issue on CotEditor 4.7.0 that the Quick Actions bar dropped to draw the Shift key in some shortcuts.</li>
+		</ul>
+	</section>
+</article>
+
+
+<article>
+	<header>
 		<h1>CotEditor 4.7.0</h1>
-		<p>release: <time>2023-12</time></p>
+		<p>release: <time>2023-12-09</time></p>
 	</header>
 
 
@@ -29,6 +58,7 @@
 		<ul>
 			<li>Add <a href="howto_quick_action.html">Quick Action bar</a> which can launch by the <kbd>Command</kbd>-<kbd>K</kbd> keys.</li>
 			<li><a href="howto_insert_camera_text.html">Insert scanned text</a> in a photo taken by iPhone or iPad.</li>
+			<li>Add <code>--syntax</code> (<code>-s</code>) option to the <code>cot</code> command-line tool to set desired syntax to the documents just opened.</li>
 		</ul>
 	</section>
 
@@ -37,9 +67,13 @@
 		<h2>Improvements</h2>
 
 		<ul>
-			<li>Optimize the performance of the normalization of incompatible line endings.</li>
+			<li>Enable the “Input Backslash” and “Input Yen Mark” menu commands in all text fields in the application.</li>
+			<li>Optimize the performance of the normalization of inconsistent line endings.</li>
 			<li>Improve stability.</li>
 			<li><span class="trivial">trivial</span>: Increase the default font size and line height.</li>
+			<li><span class="trivial">trivial</span>: Add a stepper to the custom tab width sheet.</li>
+			<li><span class="trivial">trivial</span>: Add shortcut symbols for special keys not on common keyboards.</li>
+			<li><span class="trivial">dev</span>: Update the build environment to Xcode 15.1.</li>
 		</ul>
 	</section>
 
@@ -48,7 +82,8 @@
 		<h2>Fixes</h2>
 
 		<ul>
-			<li>Fix an issue that the Forward Delete key could not be correctly assigned as custom key bindings.</li>
+			<li>Fixed an issue that the “unescape replacement string” option could not unescape consecutive backslashes correctly.</li>
+			<li>Fix an issue that the Forward Delete key could not be correctly assigned as a custom shortcut key.</li>
 		</ul>
 	</section>
 </article>

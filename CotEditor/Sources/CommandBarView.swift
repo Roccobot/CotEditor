@@ -28,6 +28,12 @@ import AppKit
 
 struct CommandBarView: View {
     
+    final class Model: ObservableObject {
+        
+        @Published var commands: [ActionCommand] = []
+    }
+    
+    
     struct Candidate: Identifiable {
         
         var command: ActionCommand
@@ -37,14 +43,16 @@ struct CommandBarView: View {
     }
     
     
+    let model: Model
+    
     weak var parent: NSWindow?
+    
     
     @Environment(\.controlActiveState) private var controlActiveState
     
     @State private var input: String = ""
     @State var candidates: [Candidate] = []
     
-    @State private var commands: [ActionCommand] = []
     @State private var selection: ActionCommand.ID?
     
     @State private var keyMonitor: Any?
@@ -67,7 +75,7 @@ struct CommandBarView: View {
                 Divider()
                 ScrollViewReader { proxy in
                     ScrollView(.vertical) {
-                        LazyVStack {
+                        LazyVStack(spacing: 6) {
                             ForEach(self.candidates) { candidate in
                                 ActionCommandView(command: candidate.command, matches: candidate.matches)
                                     .selected(candidate.id == self.selection)
@@ -77,18 +85,20 @@ struct CommandBarView: View {
                                         self.perform()
                                     }
                             }
-                        }.padding(.horizontal, 12)
-                    }.onChange(of: self.selection) { id in
+                        }
+                        .padding(.horizontal, 10)
+                    }
+                    .onChange(of: self.selection) { id in
                         proxy.scrollTo(id)
                     }
                 }
-                .padding(.vertical, 12)
+                .compatibleContentMargins(.vertical, 10)
                 .frame(maxHeight: 300)
                 .fixedSize(horizontal: false, vertical: true)
             }
         }
         .onChange(of: self.input) { input in
-            self.candidates = self.commands
+            self.candidates = self.model.commands
                 .compactMap {
                     guard let result = $0.match(command: input) else { return nil }
                     return Candidate(command: $0, matches: result.result, score: result.score)
@@ -99,8 +109,6 @@ struct CommandBarView: View {
         .onChange(of: self.controlActiveState) { state in
             switch state {
                 case .key, .active:
-                    self.commands = NSApp.mainMenu?.items
-                        .flatMap(\.actionCommands) ?? []
                     self.keyMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
                         if let key = event.specialKey,
                            event.modifierFlags.isDisjoint(with: [.shift, .control, .option, .command])
@@ -176,9 +184,11 @@ private struct ActionCommandView: View {
             Image(systemName: self.command.kind.systemImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .font(.system(size: 23))
                 .fontWeight(.light)
                 .foregroundStyle(self.isSelected ? .primary : .secondary)
-                .frame(width: 32, height: 20, alignment: .center)
+                .frame(width: 26, height: 22, alignment: .center)
+                .padding(.horizontal, 4)
             
             VStack(alignment: .leading) {
                 HStack(alignment: .firstTextBaseline, spacing: 4) {
@@ -188,6 +198,7 @@ private struct ActionCommandView: View {
                                 .opacity(0.4)
                         }
                         Text(self.attributed(match.string, in: match.ranges, font: .body))
+                            .frame(minWidth: 20)
                             .layoutPriority((offset == 0) ? 10 : Double(offset))
                     }
                 }
@@ -210,15 +221,14 @@ private struct ActionCommandView: View {
             Spacer()
             
             if let shortcut = self.command.shortcut {
-                Text(shortcut.symbol)
+                ShortcutView(shortcut)
                     .foregroundStyle(self.isSelected ? .primary : .secondary)
-                    .fixedSize()
                     .layoutPriority(100)
             }
         }
         .lineLimit(1)
         .padding(.vertical, 4)
-        .padding(.horizontal)
+        .padding(.horizontal, 10)
         .contentShape(Rectangle())  // for clicking
         .foregroundStyle(self.isSelected ? Color.selectedMenuItemText : .primary)
         .background(self.isSelected ? Color.accentColor : .clear,
@@ -270,6 +280,20 @@ private extension ActionCommand.Kind {
 }
 
 
+private extension View {
+    
+    @available(macOS, deprecated: 14)
+    func compatibleContentMargins(_ edges: Edge.Set = .all, _ length: CGFloat?) -> some View {
+        
+        if #available(macOS 14, *) {
+            return self.contentMargins(edges, length, for: .scrollContent)
+        } else {
+            return self.padding(edges, length)
+        }
+    }
+}
+
+
 private extension Color {
     
     static let selectedMenuItemText = Color(nsColor: .selectedMenuItemTextColor)
@@ -281,24 +305,29 @@ private extension Color {
 
 #Preview {
     let candidates: [CommandBarView.Candidate] = [
-        .init(command: .init(kind: .command, title: "Find…",
-                             paths: ["Find"],
-                             shortcut: Shortcut("f", modifiers: .command),
+        .init(command: .init(kind: .command, title: "Enter Full Screen",
+                             paths: ["View"],
+                             shortcut: Shortcut("E", modifiers: .function),
                              action: #selector(NSResponder.yank)),
-              matches: [.init(string: "Find…", ranges: [])],
+              matches: [.init(string: "Enter Full Screen", ranges: [])],
               score: 0),
         .init(command: .init(kind: .command, title: "Fortran",
                              paths: ["Format", "Syntax"],
                              action: #selector(NSResponder.yank)),
               matches: [
-                .init(string: "Syntax",
-                      ranges: [Range(NSRange(0..<2), in: "Syntax")!]),
+                .init(string: "Syntax", ranges: [Range(NSRange(0..<2), in: "Syntax")!]),
                 .init(string: "Fortran", ranges: []),
               ],
               score: 0),
+        .init(command: .init(kind: .script, title: "Run Script",
+                             paths: ["Script"],
+                             shortcut: Shortcut("R", modifiers: .command),
+                             action: #selector(NSResponder.yank)),
+              matches: [.init(string: "Run Script", ranges: [])],
+              score: 0),
     ]
     
-    return CommandBarView(candidates: candidates)
+    return CommandBarView(model: .init(), candidates: candidates)
 }
 
 
@@ -308,7 +337,8 @@ private extension Color {
                        paths: ["Format", "Syntax"],
                        shortcut: Shortcut("s", modifiers: [.command]),
                        action: #selector(NSResponder.yank)),
-        matches: [.init(string: "Swift", ranges: [])],
+        matches: [.init(string: "Swift",
+                        ranges: [Range(NSRange(1..<3), in: "Swift")!])],
         isSelected: true
     )
     .fixedSize(horizontal: false, vertical: true)

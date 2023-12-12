@@ -516,6 +516,7 @@
 "Delete Duplicate Lines" = "Apagar Linhas Duplicadas";
 "Duplicate Line" = "Duplicar Linha";
 "Delete Line" = "Apagar Linha";
+"Join Lines" = "Juntar Linhas";
 "Trim Trailing Whitespace" = "Aparar Espaço em Branco à Direita";
 
 // Contextual menu items
@@ -965,8 +966,8 @@
 
 /* MARK: LiveTextInsertionView */
 // error messages
-"No text detected" = "Nenhum texto detectado";  // FIXME: needs review
-"Detection failed" = "A detecção falhou";  // FIXME: needs review
+"No text detected" = "Texto não detectado";
+"Detection failed" = "Falha na detecção";
 
 
 

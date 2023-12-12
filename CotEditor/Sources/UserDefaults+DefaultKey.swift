@@ -40,9 +40,21 @@ extension UserDefaults {
     ///
     /// - Parameter key: The default key.
     /// - Returns: The initial value.
-    func registeredValue<T>(for key: DefaultKey<T>) -> T {
+    subscript<T>(initial key: DefaultKey<T>) -> T {
         
         self.volatileDomain(forName: UserDefaults.registrationDomain)[key.rawValue] as! T
+    }
+    
+    
+    /// Return the initial value for key registered on `register(defaults:)`.
+    ///
+    /// - Parameter key: The default key.
+    /// - Returns: The initial value.
+    subscript<T>(initial key: DefaultKey<T>) -> T where T: RawRepresentable, T.RawValue == Int {
+        
+        let rawValue = self.volatileDomain(forName: UserDefaults.registrationDomain)[key.rawValue] as? T.RawValue ?? 0
+        
+        return T(rawValue: rawValue) ?? T(rawValue: 0)!
     }
     
     

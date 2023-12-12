@@ -516,6 +516,7 @@
 "Delete Duplicate Lines" = "Doppelte Zeilen löschen";
 "Duplicate Line" = "Zeile duplizieren";
 "Delete Line" = "Zeile löschen";
+"Join Lines" = "Zeilen verbinden";
 "Trim Trailing Whitespace" = "Leerzeichen am Zeilenende entfernen";
 
 // Contextual menu items
@@ -954,7 +955,7 @@
 /* MARK: Character Inspector View */
 "Unknown" = "Unbekannt";
 "No Block" = "Kein Block";
-"Code Point:" = "Codepunkte:";
+"Code Point:" = "Codepunkt:";
 "Block:" = "Block:";
 "Category:" = "Kategorie:";
 "Version:" = "Version:";
